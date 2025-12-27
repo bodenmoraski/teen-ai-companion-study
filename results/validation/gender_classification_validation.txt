@@ -1,0 +1,33 @@
+Gender Classification Validation Results
+======================================================================
+
+Ground Truth: Self-declared gender
+Total users with ground truth: 4,937
+
+Method Performance:
+----------------------------------------------------------------------
+
+Community Embeddings:
+  n_samples: 3845
+  accuracy: 0.4895
+  cohen_kappa: 0.0570
+  precision_macro: 0.3534
+  recall_macro: 0.3225
+  f1_macro: 0.3250
+  precision_weighted: 0.6240
+  recall_weighted: 0.4895
+  f1_weighted: 0.5355
+
+
+Confusion Matrices:
+----------------------------------------------------------------------
+
+Community Embeddings:
+Rows: True (self-declared), Columns: Predicted
+Labels: male, female, nonbinary
+
+           male  female  nonbinary
+male       1400    1067          0
+female      445     482          0
+nonbinary    18      12          0
+

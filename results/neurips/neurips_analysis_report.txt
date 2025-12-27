@@ -1,0 +1,98 @@
+================================================================================
+NEURIPS-LEVEL ANALYSIS REPORT
+Teen-AI Companion Anthropomorphization Study
+Generated: 2025-12-26 21:31:07.465389
+================================================================================
+
+1. METHOD COMPARISON
+----------------------------------------
+                 method  coverage  n_classified  accuracy  cohens_kappa
+0      Self-Declaration  0.009753           459  1.000000      1.000000
+1  Community Embeddings  0.637521         30003  0.376022      0.052909
+2              Ensemble  0.677638         31891  1.000000      1.000000
+
+2. INTER-METHOD AGREEMENT (Cohen's κ)
+----------------------------------------
+                  Self-Declaration  Community       LLM  Ensemble
+Self-Declaration          1.000000   0.052909       NaN  1.000000
+Community                 0.052909   1.000000  0.033985  0.862916
+LLM                            NaN   0.033985  1.000000  0.960171
+Ensemble                  1.000000   0.862916  0.960171  1.000000
+
+3. SIMPLIFIED AGE CLASSIFICATION (3-BUCKET)
+----------------------------------------
+Ensemble accuracy: 100.0%
+Community embedding accuracy: 46.3%
+
+4. HIERARCHICAL REGRESSION RESULTS
+----------------------------------------
+
+controls_only:
+  R² = 0.000053
+  Adj R² = 0.000016
+  N = 27027
+  Significant (p<0.05): Intercept
+
+controls_age:
+  R² = 0.000113
+  Adj R² = -0.000073
+  N = 26890
+  Significant (p<0.05): Intercept
+
+controls_age_gender:
+  R² = 0.000132
+  Adj R² = -0.000129
+  N = 26890
+
+full:
+  R² = 0.000142
+  Adj R² = -0.000267
+  N = 26890
+
+robust_hc3:
+  R² = 0.000085
+  Adj R² = -0.000138
+  N = 26890
+  Significant (p<0.05): Intercept, gender_nonbinary
+
+5. ROBUSTNESS CHECKS
+----------------------------------------
+
+Sensitivity Analysis (varying thresholds):
+   threshold_scale  accuracy  n_classified
+0             0.90  0.506812         30003
+1             0.95  0.504087         30003
+2             1.00  0.487738         30003
+3             1.05  0.485014         30003
+4             1.10  0.479564         30003
+
+Temporal Stability:
+
+Subreddit-Level Analysis:
+
+6. MULTIPLE COMPARISON CORRECTIONS
+----------------------------------------
+Before correction: 0 significant
+After FDR correction: 0 significant
+
+7. MODEL DIAGNOSTICS
+----------------------------------------
+  breusch_pagan_stat: 519.3297224832659
+  breusch_pagan_p: 2.4129521763487585e-104
+  heteroscedasticity: Yes
+  jarque_bera_error: not enough values to unpack (expected 4, got 2)
+  n_influential_obs: 1038
+  max_cooks_d: 0.016929667418374227
+  max_vif: 10.969775854386146
+  multicollinearity: High
+
+8. BOOTSTRAP CONFIDENCE INTERVALS
+----------------------------------------
+                                      coef_mean  coef_std  ci_lower_95  ci_upper_95
+Intercept                              0.024295  0.008837     0.006558     0.040390
+age_3bucket_community[T.teen]          0.011558  0.023502    -0.034825     0.056644
+age_3bucket_community[T.young_adult]  -0.004069  0.026464    -0.057167     0.046353
+age_teen                              -0.008946  0.024520    -0.060923     0.040082
+age_young_adult                        0.012997  0.022825    -0.030986     0.053213
+gender_female                         -0.001113  0.008492    -0.018987     0.014730
+gender_nonbinary                       0.080331  0.037992     0.010599     0.159016

@@ -1,0 +1,4 @@
+initial_count,after_standardization,after_bot_filter,after_text_filter,after_deduplication,final_count,file
+7527,7527,7422,6475,6475,6475,aicompanions_comments.jsonl
+397230,397230,351067,269040,269040,269040,characterai_comments.jsonl
+10000,10000,9738,8380,8380,8380,replika_comments.jsonl

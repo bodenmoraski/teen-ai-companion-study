@@ -1,0 +1,53 @@
+======================================================================
+POWER ANALYSIS REPORT
+Accounting for Measurement Error in Demographics
+======================================================================
+
+PARAMETERS
+----------------------------------------
+  Sample size: 27,000
+  Classification reliability: 46.3%
+  Alpha: 0.05 (two-tailed)
+  Number of predictors: 5
+
+EFFECT SIZE BENCHMARKS (Cohen's f²)
+----------------------------------------
+  Small: f² = 0.02
+  Medium: f² = 0.15
+  Large: f² = 0.35
+
+POWER TO DETECT EFFECTS
+----------------------------------------
+Effect Size     No Error        With Error      Reduction      
+------------------------------------------------------------
+Small           100.0%         100.0%         +0.0%
+Medium          100.0%         100.0%         +0.0%
+Large           100.0%         100.0%         +0.0%
+
+MINIMUM DETECTABLE EFFECT (MDE) at 80% Power
+----------------------------------------
+  Without measurement error: f² = 0.0005 (negligible)
+  With measurement error:    f² = 0.0022 (negligible)
+  MDE inflation:             4.7x
+
+STUDY CONTEXT
+----------------------------------------
+  Observed effect size (f²): 0.0007
+  Interpretation: negligible
+
+  Power to detect observed effect: 29.5%
+
+INTERPRETATION
+----------------------------------------
+  The observed effect (f² ≈ 0.0007) is far below even 'small' effects (f² = 0.02).
+  However, measurement error (46.3% accuracy) reduces power substantially.
+
+  Key conclusions:
+  1. With 27,000 observations and 46.3% reliability,
+     we can only detect true effects ≥ f² = 0.0022 at 80% power
+  2. A 'small' effect (f² = 0.02) would be detected with >99% power even with error
+  3. The null result likely reflects genuinely negligible effects,
+     not effects masked by measurement error
+
+  Recommendation: Frame as 'effects too small to matter' rather than
+  'no effects exist' - we cannot rule out very tiny effects

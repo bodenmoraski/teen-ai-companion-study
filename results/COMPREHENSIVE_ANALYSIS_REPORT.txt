@@ -1,0 +1,70 @@
+======================================================================
+TEEN-AI COMPANION RELATIONSHIPS ON REDDIT
+Comprehensive Analysis Report
+======================================================================
+
+DATASET OVERVIEW
+----------------------------------------------------------------------
+Total users: 44,421
+Total features: 27
+
+DEMOGRAPHICS ANALYSIS
+----------------------------------------------------------------------
+Age classified: 18,390 (41.4%)
+
+Age Distribution:
+  13-18: 251 (1.4%)
+  19-25: 91 (0.5%)
+  26-40: 18,009 (97.9%)
+  41-60: 32 (0.2%)
+  61-80: 7 (0.0%)
+
+Gender classified: 19,187 (43.2%)
+
+Gender Distribution:
+  unknown: 14,412 (75.1%)
+  male: 3,441 (17.9%)
+  female: 1,292 (6.7%)
+  nonbinary: 42 (0.2%)
+
+ANTHROPOMORPHIZATION ANALYSIS
+----------------------------------------------------------------------
+Users with AnthroScore: 44,421
+Mean AnthroScore: 0.033
+Median AnthroScore: 0.000
+Std Dev: 0.691
+Range: [-6.577, 6.671]
+
+AnthroScore by Age Bucket:
+  13-18: mean=0.010, n=251
+  19-25: mean=0.120, n=91
+  26-40: mean=0.037, n=18,009
+  41-60: mean=0.097, n=32
+  61-80: mean=0.178, n=7
+
+AnthroScore by Gender:
+  female: mean=0.102, n=1,292
+  male: mean=0.073, n=3,441
+  nonbinary: mean=0.120, n=42
+  unknown: mean=0.029, n=14,412
+
+EMOTION ANALYSIS
+----------------------------------------------------------------------
+Dominant Emotions:
+  neutral: 28,461 (64.1%)
+  surprise: 5,042 (11.4%)
+  anger: 2,848 (6.4%)
+  sadness: 2,433 (5.5%)
+  joy: 2,307 (5.2%)
+  disgust: 2,259 (5.1%)
+  fear: 1,071 (2.4%)
+
+KEY FINDINGS
+----------------------------------------------------------------------
+RQ1a: 1.9% of classified users are teens/young adults (13-25)
+
+RQ2: Anthropomorphization by Demographics
+  Highest AnthroScore by age:
+    61-80: 0.178
+    19-25: 0.120
+    41-60: 0.097

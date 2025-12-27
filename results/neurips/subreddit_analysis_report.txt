@@ -1,0 +1,387 @@
+======================================================================
+SUBREDDIT ANALYSIS REPORT
+The Main Finding: Platform Context Matters
+======================================================================
+
+1. VARIANCE EXPLAINED COMPARISON
+--------------------------------------------------
+N observations: 31,891
+
+Demographics only (age + gender): R² = 0.000055
+Subreddit only:                   R² = 0.003168
+Combined:                         R² = 0.003357
+
+RATIO: Subreddit explains 58.0x more variance than demographics
+
+2. SUBREDDIT CHARACTERISTICS
+--------------------------------------------------
+
+characterai (n=7,187):
+  AnthroScore: mean=0.0155, std=0.5537
+  Age: 57.4% teen, 16.5% young adult
+  Gender: 31.9% male, 35.7% female
+
+teenagers (n=584):
+  AnthroScore: mean=0.0222, std=0.6201
+  Age: 73.1% teen, 16.5% young adult
+  Gender: 52.1% male, 30.0% female
+
+hazbin (n=354):
+  AnthroScore: mean=0.0355, std=0.5265
+  Age: 78.7% teen, 11.1% young adult
+  Gender: 60.2% male, 25.7% female
+
+janitorai_official (n=315):
+  AnthroScore: mean=-0.0393, std=0.7856
+  Age: 46.0% teen, 18.9% young adult
+  Gender: 25.1% male, 51.7% female
+
+askreddit (n=313):
+  AnthroScore: mean=-0.0002, std=0.6929
+  Age: 16.1% teen, 17.2% young adult
+  Gender: 36.7% male, 37.1% female
+
+originalcharacter (n=299):
+  AnthroScore: mean=-0.0106, std=0.5253
+  Age: 83.5% teen, 11.9% young adult
+  Gender: 56.9% male, 27.8% female
+
+robloxavatars (n=298):
+  AnthroScore: mean=0.0641, std=0.4427
+  Age: 88.0% teen, 10.9% young adult
+  Gender: 82.6% male, 6.4% female
+
+gachalife2 (n=245):
+  AnthroScore: mean=-0.0124, std=0.6088
+  Age: 89.7% teen, 8.1% young adult
+  Gender: 36.7% male, 41.2% female
+
+teenagersbutbetter (n=231):
+  AnthroScore: mean=0.0601, std=0.4608
+  Age: 85.0% teen, 9.4% young adult
+  Gender: 71.4% male, 13.4% female
+
+askouija (n=220):
+  AnthroScore: mean=-0.0092, std=0.6019
+  Age: 84.4% teen, 10.1% young adult
+  Gender: 64.1% male, 21.4% female
+
+loveanddeepspace (n=201):
+  AnthroScore: mean=0.1170, std=0.8082
+  Age: 6.5% teen, 15.4% young adult
+  Gender: 6.0% male, 76.6% female
+
+dandysworld_ (n=170):
+  AnthroScore: mean=0.0920, std=0.5636
+  Age: 88.7% teen, 11.3% young adult
+  Gender: 56.5% male, 23.5% female
+
+forsakenroblox (n=164):
+  AnthroScore: mean=0.1206, std=0.6163
+  Age: 94.0% teen, 6.0% young adult
+  Gender: 82.9% male, 6.7% female
+
+projectsekai (n=155):
+  AnthroScore: mean=0.0525, std=0.7191
+  Age: 80.0% teen, 11.4% young adult
+  Gender: 20.0% male, 51.0% female
+
+favoritecharacter (n=136):
+  AnthroScore: mean=0.1264, std=0.4432
+  Age: 77.0% teen, 12.7% young adult
+  Gender: 73.5% male, 10.3% female
+
+murderdronesofficial (n=128):
+  AnthroScore: mean=-0.0153, std=0.7781
+  Age: 90.2% teen, 8.1% young adult
+  Gender: 89.8% male, 4.7% female
+
+chatgpt (n=121):
+  AnthroScore: mean=-0.0757, std=0.8929
+  Age: 8.8% teen, 7.0% young adult
+  Gender: 50.4% male, 28.9% female
+
+cookierunkingdoms (n=120):
+  AnthroScore: mean=0.1139, std=0.5706
+  Age: 88.8% teen, 8.4% young adult
+  Gender: 25.0% male, 49.2% female
+
+genshin_impact (n=119):
+  AnthroScore: mean=-0.0517, std=0.7312
+  Age: 55.3% teen, 23.3% young adult
+  Gender: 31.9% male, 50.4% female
+
+gachaclub (n=110):
+  AnthroScore: mean=0.0436, std=0.4040
+  Age: 92.9% teen, 5.1% young adult
+  Gender: 23.6% male, 46.4% female
+
+brawlstars (n=108):
+  AnthroScore: mean=-0.0145, std=0.4617
+  Age: 89.2% teen, 6.9% young adult
+  Gender: 83.3% male, 8.3% female
+
+battlefordreamisland (n=100):
+  AnthroScore: mean=-0.0652, std=0.4546
+  Age: 96.7% teen, 3.3% young adult
+  Gender: 79.0% male, 7.0% female
+
+honkaistarrail (n=92):
+  AnthroScore: mean=0.0097, std=0.4693
+  Age: 61.3% teen, 22.5% young adult
+  Gender: 35.9% male, 35.9% female
+
+fetishcai (n=92):
+  AnthroScore: mean=0.0206, std=0.3283
+  Age: 79.0% teen, 17.3% young adult
+  Gender: 57.6% male, 18.5% female
+
+aicompanions (n=89):
+  AnthroScore: mean=0.1609, std=0.7680
+  Age: 0.0% teen, 11.1% young adult
+  Gender: 9.0% male, 28.1% female
+
+creaturesofsonaria (n=84):
+  AnthroScore: mean=0.0584, std=0.5876
+  Age: 85.5% teen, 9.2% young adult
+  Gender: 29.8% male, 54.8% female
+
+epicthemusical (n=82):
+  AnthroScore: mean=-0.1083, std=0.8223
+  Age: 65.8% teen, 14.5% young adult
+  Gender: 12.2% male, 68.3% female
+
+fundamentalpaperedu (n=80):
+  AnthroScore: mean=0.0885, std=0.3536
+  Age: 90.9% teen, 9.1% young adult
+  Gender: 87.5% male, 3.8% female
+
+ultrakill (n=80):
+  AnthroScore: mean=-0.1667, std=0.7974
+  Age: 92.0% teen, 5.3% young adult
+  Gender: 87.5% male, 5.0% female
+
+dresstoimpressroblox (n=79):
+  AnthroScore: mean=-0.0081, std=0.3337
+  Age: 71.4% teen, 7.1% young adult
+  Gender: 15.2% male, 72.2% female
+
+adoptmerbx (n=78):
+  AnthroScore: mean=0.0205, std=0.6615
+  Age: 82.2% teen, 12.3% young adult
+  Gender: 9.0% male, 75.6% female
+
+aitah (n=77):
+  AnthroScore: mean=-0.0851, std=0.9318
+  Age: 6.7% teen, 15.0% young adult
+  Gender: 11.7% male, 58.4% female
+
+powerscaling (n=76):
+  AnthroScore: mean=0.0952, std=0.5427
+  Age: 76.5% teen, 13.2% young adult
+  Gender: 88.2% male, 2.6% female
+
+autism (n=76):
+  AnthroScore: mean=0.0437, std=0.4905
+  Age: 17.4% teen, 26.1% young adult
+  Gender: 18.4% male, 60.5% female
+
+animequestions (n=75):
+  AnthroScore: mean=-0.0524, std=0.6255
+  Age: 81.8% teen, 9.1% young adult
+  Gender: 70.7% male, 12.0% female
+
+bungoustraydogs (n=68):
+  AnthroScore: mean=0.0643, std=0.5559
+  Age: 73.0% teen, 20.6% young adult
+  Gender: 8.8% male, 83.8% female
+
+myheroacadamia (n=67):
+  AnthroScore: mean=-0.0563, std=0.6681
+  Age: 74.5% teen, 14.5% young adult
+  Gender: 53.7% male, 22.4% female
+
+geometrydash (n=67):
+  AnthroScore: mean=-0.0308, std=0.7286
+  Age: 88.1% teen, 10.2% young adult
+  Gender: 86.6% male, 0.0% female
+
+osana (n=67):
+  AnthroScore: mean=0.0788, std=0.5466
+  Age: 74.2% teen, 19.4% young adult
+  Gender: 28.4% male, 50.7% female
+
+ao3 (n=66):
+  AnthroScore: mean=0.0132, std=0.3117
+  Age: 15.0% teen, 13.3% young adult
+  Gender: 13.6% male, 68.2% female
+
+undertale (n=66):
+  AnthroScore: mean=-0.0481, std=0.4216
+  Age: 84.4% teen, 9.4% young adult
+  Gender: 78.8% male, 12.1% female
+
+helldivers (n=65):
+  AnthroScore: mean=-0.0442, std=0.5870
+  Age: 35.0% teen, 21.7% young adult
+  Gender: 89.2% male, 1.5% female
+
+objectshows (n=64):
+  AnthroScore: mean=0.0811, std=0.6395
+  Age: 86.0% teen, 12.3% young adult
+  Gender: 79.7% male, 6.2% female
+
+fridaynightfunkin (n=63):
+  AnthroScore: mean=-0.0453, std=0.4703
+  Age: 89.7% teen, 6.9% young adult
+  Gender: 82.5% male, 7.9% female
+
+murderdrones (n=62):
+  AnthroScore: mean=0.1204, std=0.6762
+  Age: 81.8% teen, 12.7% young adult
+  Gender: 80.6% male, 8.1% female
+
+sprunki (n=61):
+  AnthroScore: mean=0.0099, std=0.6129
+  Age: 93.3% teen, 6.7% young adult
+  Gender: 86.9% male, 8.2% female
+
+rusaskreddit (n=60):
+  AnthroScore: mean=0.1277, std=0.7476
+  Age: 70.4% teen, 13.0% young adult
+  Gender: 78.3% male, 6.7% female
+
+deltarune (n=58):
+  AnthroScore: mean=0.0669, std=0.5827
+  Age: 82.4% teen, 9.8% young adult
+  Gender: 70.7% male, 12.1% female
+
+deadbydaylight (n=56):
+  AnthroScore: mean=-0.2662, std=0.8971
+  Age: 33.3% teen, 25.5% young adult
+  Gender: 53.6% male, 28.6% female
+
+amioverreacting (n=55):
+  AnthroScore: mean=0.0710, std=0.8368
+  Age: 12.2% teen, 12.2% young adult
+  Gender: 23.6% male, 56.4% female
+
+kimetsunoyaiba (n=55):
+  AnthroScore: mean=0.1587, std=0.9097
+  Age: 63.5% teen, 19.2% young adult
+  Gender: 30.9% male, 50.9% female
+
+marvelrivals (n=53):
+  AnthroScore: mean=-0.0242, std=0.9780
+  Age: 26.5% teen, 12.2% young adult
+  Gender: 66.0% male, 15.1% female
+
+sonicthehedgehog (n=53):
+  AnthroScore: mean=0.0462, std=0.5626
+  Age: 74.5% teen, 15.7% young adult
+  Gender: 83.0% male, 11.3% female
+
+fortnitebr (n=53):
+  AnthroScore: mean=0.2819, std=1.0223
+  Age: 52.3% teen, 15.9% young adult
+  Gender: 69.8% male, 5.7% female
+
+animaljam (n=52):
+  AnthroScore: mean=-0.0222, std=0.3701
+  Age: 53.3% teen, 17.8% young adult
+  Gender: 15.4% male, 65.4% female
+
+zenlesszonezero (n=52):
+  AnthroScore: mean=0.0192, std=0.5985
+  Age: 87.2% teen, 10.6% young adult
+  Gender: 88.5% male, 5.8% female
+
+3. WITHIN-SUBREDDIT DEMOGRAPHIC EFFECTS
+--------------------------------------------------
+
+characterai (n=4780):
+  R² = 0.000662
+  F-test p-value: 0.5311
+
+teenagers (n=473):
+  R² = 0.004692
+  F-test p-value: 0.6979
+
+originalcharacter (n=253):
+  R² = 0.016919
+  F-test p-value: 0.2350
+
+robloxavatars (n=262):
+  R² = 0.003072
+  F-test p-value: 0.8506
+
+brawlstars (n=101):
+  R² = 0.103356
+  F-test p-value: 0.0139
+
+teenagersbutbetter (n=193):
+  R² = 0.004993
+  F-test p-value: 0.9179
+
+favoritecharacter (n=114):
+  R² = 0.003604
+  F-test p-value: 0.9827
+
+hazbin (n=307):
+  R² = 0.014542
+  F-test p-value: 0.3499
+
+projectsekai (n=107):
+  R² = 0.029687
+  F-test p-value: 0.3736
+
+gachalife2 (n=190):
+  R² = 0.002823
+  F-test p-value: 0.9129
+
+janitorai_official (n=243):
+  R² = 0.005238
+  F-test p-value: 0.7392
+
+dandysworld_ (n=133):
+  R² = 0.000367
+  F-test p-value: 0.9764
+
+murderdronesofficial (n=122):
+  R² = 0.003635
+  F-test p-value: 0.9337
+
+askouija (n=188):
+  R² = 0.017047
+  F-test p-value: 0.3658
+
+askreddit (n=231):
+  R² = 0.014193
+  F-test p-value: 0.5177
+
+loveanddeepspace (n=164):
+  R² = 0.013083
+  F-test p-value: 0.5492
+
+forsakenroblox (n=143):
+  R² = 0.018596
+  F-test p-value: 0.4542
+
+4. CROSS-SUBREDDIT COMPARISON
+--------------------------------------------------
+ANOVA: F=1.69, p=2.4674e-02
+Significant difference between subreddits: Yes
+
+5. INTERPRETATION
+--------------------------------------------------
+Key Finding: Subreddit context explains far more variance in
+anthropomorphization than individual demographics.
+
+Possible explanations:
+  1. SELECTION: Users with certain tendencies choose specific platforms
+  2. SOCIALIZATION: Platform norms shape how users discuss AI
+  3. CONTENT: Different platforms have different AI products
+  4. MODERATION: Community rules affect discourse
+
+Recommendation: Pivot findings to emphasize platform effects
+rather than demographic nulls.

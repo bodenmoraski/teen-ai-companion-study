@@ -1,0 +1,36 @@
+============================================================
+MEASUREMENT ERROR ANALYSIS REPORT
+============================================================
+
+1. RELIABILITY COEFFICIENTS
+----------------------------------------
+  age_5bucket: 0.376 (37.6% accuracy)
+  age_3bucket: 0.463 (46.3% accuracy)
+  gender: 0.489 (48.9% accuracy)
+
+2. ATTENUATION IMPLICATIONS
+----------------------------------------
+  age_5bucket:
+    - True effects may be 2.7x larger
+    - 62.4% of signal lost to noise
+  age_3bucket:
+    - True effects may be 2.2x larger
+    - 53.7% of signal lost to noise
+  gender:
+    - True effects may be 2.0x larger
+    - 51.1% of signal lost to noise
+
+3. INTERPRETATION GUIDANCE
+----------------------------------------
+  - Null results (p > 0.05) may reflect:
+    a) True null effect (demographics don't matter)
+    b) Effect masked by measurement error
+  - With ~46% accuracy, substantial effects could be hidden
+  - Should interpret as 'too small to detect' not 'no effect'
+
+4. RECOMMENDATIONS
+----------------------------------------
+  - Report both naive and corrected coefficients
+  - Conduct power analysis with measurement error
+  - Frame conclusions tentatively
+  - Acknowledge measurement limitations prominently

@@ -1,0 +1,23 @@
+Data Collection Statistics
+======================================================================
+
+Total comments: 283895
+Unique authors: 47062
+Subreddits: AICompanions, CharacterAI, replika
+
+Comments by subreddit:
+  r/CharacterAI: 269040
+  r/replika: 8380
+  r/AICompanions: 6475
+
+Comments by author (top 10):
+  joeyrevolver187: 1671
+  Bruiserzinha: 1158
+  SilverbackRon: 1069
+  Cross_Fear: 1006
+  Oritad_Heavybrewer: 964
+  _chronically_bored: 746
+  Creative_Bad_7994: 731
+  Osamu_Melisso: 696
+  Invader_Bethany: 594
+  daisychomp: 552

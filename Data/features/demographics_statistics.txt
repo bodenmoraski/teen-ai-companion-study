@@ -1,0 +1,19 @@
+Demographics Extraction Statistics
+======================================================================
+
+Total users: 44421
+Age classified: 18390 (41.4%)
+Gender classified: 19187 (43.2%)
+
+Age distribution:
+  13-18: 251 (1.4%)
+  19-25: 91 (0.5%)
+  26-40: 18009 (97.9%)
+  41-60: 32 (0.2%)
+  61-80: 7 (0.0%)
+
+Gender distribution:
+  unknown: 14412 (75.1%)
+  male: 3441 (17.9%)
+  female: 1292 (6.7%)
+  nonbinary: 42 (0.2%)

@@ -1,0 +1,128 @@
+RQ2: Regression Analysis Results (NeurIPS-Level Statistics)
+======================================================================
+
+Total observations: 31891
+Analysis date: 2025-12-26 19:53:25
+Reference categories: age_26_40 (age), gender_unknown (gender)
+
+
+Model 1: Age Only
+======================================================================
+
+Coefficients:
+           Coefficient  Std Error   t-value   p-value  CI Lower (95%)  CI Upper (95%) Significance
+Intercept     0.012908   0.012021  1.073743  0.282946       -0.010654        0.036470             
+age_13_18     0.015348   0.013114  1.170356  0.241867       -0.010356        0.041052             
+age_19_25     0.022919   0.014951  1.532898  0.125311       -0.006386        0.052224             
+age_41_60     0.001925   0.019584  0.098270  0.921718       -0.036461        0.040310             
+age_61_80     0.022592   0.014605  1.546855  0.121908       -0.006035        0.051219             
+
+
+Model Fit Statistics:
+  R-squared: 0.0001
+  Adjusted R-squared: -0.0000
+  AIC: 63361.43
+  BIC: 63403.28
+  F-statistic: 0.9630
+  F-statistic p-value: 4.2644e-01
+  Log-likelihood: -31675.72
+  N observations: 31891
+  Degrees of freedom (residual): 31886
+
+Effect Sizes:
+  Cohen's f2: 0.000121
+    Interpretation: negligible effect
+
+Model 2: Age + Gender
+======================================================================
+
+Coefficients:
+                  Coefficient  Std Error   t-value   p-value  CI Lower (95%)  CI Upper (95%) Significance
+Intercept            0.018854   0.015040  1.253582  0.210003       -0.010625        0.048334             
+age_13_18            0.015028   0.013260  1.133347  0.257077       -0.010962        0.041018             
+age_19_25            0.021790   0.015064  1.446535  0.148037       -0.007735        0.051316             
+age_41_60            0.002363   0.019596  0.120584  0.904021       -0.036045        0.040771             
+age_61_80            0.023061   0.014619  1.577383  0.114717       -0.005594        0.051715             
+gender_female       -0.007325   0.011413 -0.641814  0.520998       -0.029696        0.015045             
+gender_male         -0.006480   0.010952 -0.591678  0.554071       -0.027947        0.014987             
+gender_nonbinary     0.074948   0.109334  0.685491  0.493039       -0.139352        0.289247             
+
+
+Model Fit Statistics:
+  R-squared: 0.0002
+  Adjusted R-squared: -0.0001
+  AIC: 63366.44
+  BIC: 63433.40
+  F-statistic: 0.6922
+  F-statistic p-value: 6.7881e-01
+  Log-likelihood: -31675.22
+  N observations: 31891
+  Degrees of freedom (residual): 31883
+
+Effect Sizes:
+  Cohen's f2: 0.000152
+    Interpretation: negligible effect
+
+Model Comparison (vs. Model 1):
+  Likelihood ratio test: 0.9941
+  Degrees of freedom: 3
+  p-value: 8.0268e-01
+  Delta R-squared: 0.000031
+
+Model 3: Full Model (Age + Gender + Interactions)
+======================================================================
+
+Coefficients:
+                              Coefficient  Std Error   t-value   p-value  CI Lower (95%)  CI Upper (95%) Significance
+Intercept                        0.116816   0.032663  3.576356  0.000349        0.052794        0.180838          ***
+age_13_18                       -0.078603   0.035454 -2.217029  0.026628       -0.148094       -0.009111            *
+age_19_25                       -0.088627   0.036551 -2.424740  0.015325       -0.160268       -0.016985            *
+age_41_60                       -0.118708   0.063166 -1.879310  0.060211       -0.242515        0.005099             
+age_61_80                       -0.127838   0.044082 -2.900011  0.003734       -0.214240       -0.041436           **
+gender_female                   -0.147086   0.036787 -3.998266  0.000064       -0.219191       -0.074981          ***
+gender_male                     -0.082535   0.038329 -2.153330  0.031300       -0.157662       -0.007409            *
+gender_nonbinary                -0.072249   0.378577 -0.190845  0.848648       -0.814274        0.669775             
+age_13_18_x_gender_female        0.135813   0.040587  3.346252  0.000820        0.056262        0.215364          ***
+age_13_18_x_gender_male          0.070526   0.041301  1.707594  0.087721       -0.010426        0.151478             
+age_13_18_x_gender_nonbinary     0.131045   0.399144  0.328315  0.742676       -0.651293        0.913383             
+age_19_25_x_gender_female        0.154538   0.043083  3.587026  0.000335        0.070095        0.238982          ***
+age_19_25_x_gender_male          0.096330   0.044193  2.179778  0.029281        0.009711        0.182949            *
+age_19_25_x_gender_nonbinary     0.151837   0.534642  0.283998  0.776414       -0.896083        1.199757             
+age_41_60_x_gender_female        0.168278   0.068536  2.455317  0.014081        0.033944        0.302611            *
+age_41_60_x_gender_male          0.094896   0.071239  1.332079  0.182844       -0.044735        0.234526             
+age_41_60_x_gender_nonbinary     0.728206   0.756970  0.962001  0.336056       -0.755484        2.211895             
+age_61_80_x_gender_female        0.207491   0.048512  4.277071  0.000019        0.112405        0.302578          ***
+age_61_80_x_gender_male          0.117919   0.050333  2.342772  0.019147        0.019264        0.216574            *
+age_61_80_x_gender_nonbinary     0.166344   0.597977  0.278178  0.780878       -1.005714        1.338402             
+
+
+Model Fit Statistics:
+  R-squared: 0.0009
+  Adjusted R-squared: 0.0003
+  AIC: 63366.47
+  BIC: 63533.87
+  F-statistic: 1.5162
+  F-statistic p-value: 6.9160e-02
+  Log-likelihood: -31663.24
+  N observations: 31891
+  Degrees of freedom (residual): 31871
+
+Effect Sizes:
+  Cohen's f2: 0.000904
+    Interpretation: negligible effect
+
+Model Comparison (vs. Model 1):
+  Likelihood ratio test: 24.9604
+  Degrees of freedom: 15
+  p-value: 5.0478e-02
+  Delta R-squared: 0.000782
+
+======================================================================
+Interpretation Notes:
+======================================================================
+Significance levels: *** p<0.001, ** p<0.01, * p<0.05
+CI: 95% confidence intervals
+Effect sizes: Cohen's f2 < 0.02 (negligible), 0.02-0.15 (small), 0.15-0.35 (medium), >0.35 (large)
+AIC/BIC: Lower is better (model comparison)
+
+Note: Age bucket column names use underscores (e.g., age_13_18) for compatibility.
