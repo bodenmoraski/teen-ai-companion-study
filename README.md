@@ -54,7 +54,7 @@ This research analyzes ~250,000 Reddit comments to understand teen-AI companion 
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/teen-ai-companion-study.git
+git clone https://github.com/bodenmoraski/teen-ai-companion-study.git
 cd teen-ai-companion-study
 
 # Create virtual environment
