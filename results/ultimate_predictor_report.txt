@@ -1,0 +1,53 @@
+ULTIMATE AGE PREDICTOR - RESULTS REPORT
+=======================================
+Generated: 2026-01-07
+
+OVERALL PERFORMANCE:
+- Total users with predictions: 47,062
+- Accuracy on known-age users: 70.6% (vs 46.3% baseline)
+- Improvement: +24.3 percentage points
+
+CONFIDENCE-FILTERED ACCURACY:
+-----------------------------
+Confidence >= 0.0:  459 users, 70.6% accuracy
+Confidence >= 0.5:  379 users, 76.3% accuracy
+Confidence >= 0.6:  314 users, 84.1% accuracy  <-- RECOMMENDED THRESHOLD
+Confidence >= 0.7:  250 users, 89.2% accuracy
+Confidence >= 0.8:  146 users, 94.5% accuracy
+Confidence >= 0.9:   55 users, 98.2% accuracy
+
+PREDICTION DISTRIBUTION (all users):
+------------------------------------
+Teen:        33,682 (71.6%)
+Adult:        8,651 (18.4%)
+Young Adult:  4,729 (10.0%)
+
+HIGH-CONFIDENCE PREDICTIONS (confidence >= 0.6):
+------------------------------------------------
+Total: 22,774 users (48.4% of all users)
+- Teen:        19,429 (85.3%)
+- Adult:        2,500 (11.0%)
+- Young Adult:    845 (3.7%)
+
+CLASS-LEVEL PERFORMANCE:
+------------------------
+                Precision   Recall   F1-Score
+Teen              75%        94%       83%
+Adult             58%        61%       60%
+Young Adult       71%        18%       29%
+
+NOTES:
+------
+- Teen classification is very strong (94% recall)
+- Adult classification is moderate
+- Young adult classification struggles (18% recall) - likely due to 
+  overlap with both teen and adult behavior patterns
+- Higher confidence thresholds significantly improve accuracy
+- Recommend using confidence >= 0.6 threshold for analysis (84% accuracy)
+
+RECOMMENDATION:
+---------------
+For the demographic analysis, use the high-confidence subset:
+- 22,774 users with confidence >= 0.6
+- Expected accuracy: 84%+ on age predictions
+- This provides a large enough sample while maintaining reliability

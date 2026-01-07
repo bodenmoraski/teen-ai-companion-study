@@ -1,8 +1,38 @@
 # TODO: Teen-AI Companion Research
 
-## Current Phase: [Phase 1 - Data Collection]
-## Current Task: [Verify existing r/CharacterAI data]
+## Current Phase: [ULTIMATE AGE PREDICTOR DEPLOYMENT]
+## Current Task: [Run new stacked ensemble classifier]
 ## Blocked: [None]
+
+---
+
+## 🚀 PRIORITY: Run Ultimate Age Predictor
+
+The new multi-signal stacked ensemble is ready. This is the ambitious rebuild of the classification system.
+
+### Immediate Steps
+- [ ] **Run the predictor**: `python scripts/run_ultimate_predictor.py`
+- [ ] **Check results**: Review `results/ultimate_predictor_report.txt`
+- [ ] **Compare to baseline**: Target is >65% accuracy (vs 46.3% baseline)
+- [ ] **If successful**: Re-run demographic regression with new predictions
+
+### Architecture (New System)
+```
+Signal 1: Text Embeddings (Sentence-BERT) → XGBoost
+Signal 2: Subreddit Patterns (500 features) → XGBoost  
+Signal 3: Behavioral Features (7 features) → XGBoost
+                    ↓
+        Meta-Learner (Stacking XGBoost)
+                    ↓
+         Calibrated Probabilities
+```
+
+### Files Created
+- `src/demographics/ultimate_age_predictor.py` - Core implementation
+- `scripts/run_ultimate_predictor.py` - Runner script
+- `docs/ULTIMATE_PREDICTOR_ARCHITECTURE.md` - Architecture docs
+
+---
 
 ---
 
