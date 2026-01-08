@@ -1,167 +1,146 @@
-# Teen-AI Companion Relationships on Reddit
+# The Illusion Project
 
-A computational social science study examining how adolescents interact with AI companions, using NeurIPS-level statistical methodology.
+## Anthropomorphization of AI Companions: A Computational Social Science Study
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+This research project examines how Reddit users anthropomorphize AI companion applications (Character.AI, Replika, etc.), with a focus on demographic differences, usage intent, and emotional expression patterns.
 
-## Overview
+---
 
-This research analyzes ~250,000 Reddit comments to understand teen-AI companion relationships through:
-
-- **Multi-method demographic classification** combining self-declaration, community embeddings, and LLM inference
-- **AnthroScore V2** for measuring anthropomorphization tendencies
-- **Rigorous statistical analysis** with measurement error correction and power analysis
+## 🔬 Research Overview
 
 ### Research Questions
 
-| RQ | Question | Method |
-|----|----------|--------|
-| **RQ1a** | Age distribution of AI companion users | 5-bucket hybrid classification |
-| **RQ1b** | Gender distribution | Self-report + community embedding |
-| **RQ2** | Demographics × anthropomorphization | OLS regression with corrections |
+1. **RQ1 (Demographics & Intent)**: What are the demographics and usage intentions of AI companion users?
+2. **RQ2 (Anthropomorphization)**: How do demographics relate to anthropomorphization of AI companions?
+3. **RQ3 (Emotional Expression)**: How do emotional expression patterns relate to anthropomorphization?
 
-## Project Structure
+### Key Findings
+
+| Finding | Effect Size | p-value |
+|---------|-------------|---------|
+| Teens anthropomorphize more than adults | d = 0.111 | p < 0.0001 |
+| High anthropomorphizers show LESS emotional diversity | d = -1.176 | p < 0.0001 |
+| Character creation → highest anthropomorphization | F = 15.58 | p < 0.0001 |
+| Age × Emotional Expression interaction effects | B = -0.06 | p < 0.01 |
+
+**The Core Story**: Teen males engaged in character creation show the highest anthropomorphization levels and exhibit concentrated (less diverse), more negative emotional expression patterns.
+
+---
+
+## 📊 Methodology
+
+### Data
+- **Source**: Reddit (AI companion subreddits)
+- **Comments**: 277,420
+- **Unique Users**: 47,062
+- **Known Age Users**: 459 (for validation)
+- **Known Gender Users**: 979 (for validation)
+
+### Classification Systems
+
+| System | Accuracy | Method |
+|--------|----------|--------|
+| Age Predictor | 84.1% (high-conf) | Stacked Ensemble (SBERT + Subreddits + Behavior) |
+| Gender Predictor | 96.1% (high-conf) | Stacked Ensemble (SBERT + Subreddits + Linguistic) |
+
+### Analysis Tools
+- **AnthroScore**: Measures anthropomorphization in text
+- **BERTopic**: Intent/purpose clustering
+- **Emotion Detection**: 7-category emotion classification
+
+---
+
+## 📁 Project Structure
 
 ```
+├── MASTER_RESEARCH_FINDINGS.md    # Complete findings document
 ├── src/
-│   ├── analysis/           # Core analysis modules
-│   ├── anthroscore/        # AnthroScore V2 implementation
-│   ├── demographics/       # Age/gender classification
-│   ├── statistical/        # Regression, power analysis, robustness
-│   └── utils/              # Configuration and utilities
-├── scripts/                # Execution scripts
-├── tests/                  # Test suite
-├── Data/                   # Data directory (not tracked)
-│   ├── raw/                # Raw JSONL from Arctic Shift
-│   ├── processed/          # Cleaned data
-│   └── features/           # Extracted features
-├── results/                # Analysis outputs
-│   ├── figures/            # Publication figures
-│   ├── neurips/            # NeurIPS-level reports
-│   └── tables/             # Statistical tables
-└── docs/                   # Documentation
+│   ├── analysis/                  # Core analysis modules
+│   ├── demographics/              # Age/gender prediction
+│   ├── anthroscore/               # Anthropomorphization scoring
+│   └── statistical/               # Statistical analysis
+├── scripts/
+│   ├── run_ultimate_predictor.py  # Age prediction
+│   ├── run_ultimate_gender_predictor.py  # Gender prediction
+│   └── rq3_emotional_analysis.py  # Emotional analysis
+├── results/                       # Analysis outputs
+├── Data/                          # Data files (not in git)
+└── docs/                          # Documentation
 ```
 
-## Installation
+---
 
-### Prerequisites
+## 🚀 Quick Start
 
-- Python 3.10+
-- OpenAI API key (for LLM-based classification)
-
-### Setup
-
+### Requirements
 ```bash
-# Clone repository
-git clone https://github.com/bodenmoraski/teen-ai-companion-study.git
-cd teen-ai-companion-study
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# or: venv\Scripts\activate  # Windows
-
-# Install dependencies
 pip install -r requirements.txt
-python -m spacy download en_core_web_sm
-
-# Configure environment
-cp .env.example .env
-# Edit .env with your OPENAI_API_KEY
-
-# Verify installation
-python verify_setup.py
 ```
 
-## Usage
+Key dependencies:
+- pandas, numpy, scipy
+- scikit-learn, xgboost
+- sentence-transformers
+- bertopic
 
-### Full Pipeline
+### Run Analysis
 
 ```bash
-# Run complete NeurIPS-level analysis
-python scripts/run_comprehensive_analysis.py
+# Age prediction
+python scripts/run_ultimate_predictor.py
+
+# Gender prediction  
+python scripts/run_ultimate_gender_predictor.py
+
+# Emotional analysis (RQ3)
+python scripts/rq3_emotional_analysis.py
 ```
 
-### Individual Phases
+---
 
-```bash
-# Phase 1: Data collection
-python scripts/phase1_data_collection.py
+## 📄 Key Documents
 
-# Phase 2: Demographics classification
-python scripts/phase2_with_api_data.py
+- **[MASTER_RESEARCH_FINDINGS.md](MASTER_RESEARCH_FINDINGS.md)** - Complete findings with all statistics
+- **[COMPREHENSIVE_RESEARCH_PLAN.md](COMPREHENSIVE_RESEARCH_PLAN.md)** - Original research plan
+- **[docs/ULTIMATE_PREDICTOR_ARCHITECTURE.md](docs/ULTIMATE_PREDICTOR_ARCHITECTURE.md)** - Classification system design
 
-# Phase 3-4: Analysis and statistics
-python scripts/targeted_phase3_phase4.py
-```
+---
 
-### Testing
+## 📈 Results Summary
 
-```bash
-# Run all tests
-pytest tests/ -v
+### Demographics (RQ1)
+- 81% teenagers, 85% male
+- Primary intent: Character creation (28%), General discussion (44%)
 
-# Run specific test suite
-pytest tests/test_criticism_fixes.py -v
-```
+### Anthropomorphization (RQ2)
+- Teens significantly higher anthropomorphization (p < 0.0001)
+- Character creation intent → highest anthropomorphization
+- Teen males are the highest-risk demographic
 
-## Methodology
+### Emotional Expression (RQ3)
+- High anthropomorphizers: less emotional diversity (d = -1.18)
+- More surprise, fear, anger; less joy
+- **Age interaction**: Teen anthropomorphization uniquely linked to reduced joy
 
-### Demographic Classification
+---
 
-We use a **three-method ensemble** approach:
+## ⚠️ Limitations
 
-1. **Self-declaration extraction** - Pattern matching for explicit age/gender mentions
-2. **Community embedding** - Word2Vec on subreddit participation patterns
-3. **LLM inference** - GPT-4.1-nano for ambiguous cases
+- Classification accuracy ~84-96% (not perfect)
+- Observational design (no causation)
+- Reddit-only sample
+- English language only
 
-### Statistical Rigor
+---
 
-Our analysis addresses common methodological concerns:
+## 📜 License
 
-- **Measurement error correction** via reliability coefficients
-- **Power analysis** with minimum detectable effect calculation
-- **Multicollinearity** checking (VIF < 5)
-- **Heteroscedasticity** robust standard errors
-- **Influential observations** analysis (Cook's D)
+MIT License - See [LICENSE](LICENSE)
 
-See [`LIMITATIONS.md`](LIMITATIONS.md) for honest framing of all limitations.
+---
 
-## Key Findings
+## 🙏 Acknowledgments
 
-Results are documented in:
-- `results/neurips/comprehensive_summary.txt` - Full analysis summary
-- `results/tables/` - Statistical tables
-- `results/figures/` - Publication-ready figures
-
-## Documentation
-
-| Document | Description |
-|----------|-------------|
-| [`COMPREHENSIVE_RESEARCH_PLAN.md`](COMPREHENSIVE_RESEARCH_PLAN.md) | Full methodology |
-| [`LIMITATIONS.md`](LIMITATIONS.md) | Honest limitations disclosure |
-| [`ARCHITECTURE_IMPROVEMENT_PLAN.md`](ARCHITECTURE_IMPROVEMENT_PLAN.md) | Future improvements |
-
-## Citation
-
-If you use this work, please cite:
-
-```bibtex
-@article{teen_ai_companion_2025,
-  title={Teen-AI Companion Relationships on Reddit: A Computational Social Science Study},
-  author={[Your Name]},
-  year={2025},
-  note={NeurIPS Submission}
-}
-```
-
-## References
-
-1. Cheng et al. (2024). AnthroScore: A Computational Linguistic Measure of Anthropomorphism. *EACL*.
-2. Chew et al. (2021). Predicting Age Groups of Reddit Users. *JMIR Public Health*.
-3. Waller & Anderson (2025). Uncovering the Sociodemographic Fabric of Reddit. *arXiv:2502.05049*.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- AnthroScore methodology adapted from existing research
+- Sentence-BERT by Reimers & Gurevych (2019)
+- Reddit data via Arctic Shift API

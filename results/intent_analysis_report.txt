@@ -1,0 +1,50 @@
+======================================================================
+INTENT/PURPOSE ANALYSIS - COMPREHENSIVE REPORT
+======================================================================
+Generated: 2026-01-07 20:21:47
+
+This analysis completes RQ1's 'intent and purpose' requirement.
+
+======================================================================
+METHODOLOGY
+======================================================================
+
+1. BERTopic clustering on Reddit comments
+2. Semantic labeling of topics into intent categories:
+   - emotional_support: Users seeking comfort, help with loneliness
+   - romantic_attachment: Users forming romantic bonds with AI
+   - roleplay_fantasy: Users engaged in creative roleplay
+   - curiosity_experimentation: Users testing/exploring AI
+   - technical_issues: Users discussing bugs/problems
+   - character_creation: Users creating/customizing AI personas
+   - community_sharing: Users sharing experiences
+
+======================================================================
+KEY FINDINGS
+======================================================================
+
+INTENT DISTRIBUTION:
+----------------------------------------
+  other: 2053
+  character_creation: 1275
+  unknown: 1186
+  community_sharing: 62
+  roleplay_fantasy: 44
+  emotional_support: 16
+
+Intent vs Age: chi2=21.80, p=0.0006 (SIGNIFICANT)
+Intent vs Gender: chi2=25.36, p=0.0001 (SIGNIFICANT)
+AnthroScore vs Intent: F=15.58, p=0.0000 (SIGNIFICANT)
+
+Emotional Support vs Other Intents:
+  Emotional mean: 1.460
+  Other mean: 1.544
+  t=-0.217, p=0.8280
+
+MULTIVARIATE REGRESSION:
+----------------------------------------
+R-squared: 0.0192
+Significant predictors:
+  intent_character_creation[T.True]: coef=0.4784, p=0.0000
+  intent_other[T.True]: coef=0.4058, p=0.0000
+  is_female: coef=-0.2087, p=0.0013
