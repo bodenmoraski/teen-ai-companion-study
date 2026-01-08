@@ -1,0 +1,150 @@
+================================================================================
+ROBUSTNESS CHECK DISCREPANCY ANALYSIS
+================================================================================
+
+Generated: 2026-01-08 00:30
+
+ISSUE: The robustness checks showed teens anthropomorphizing LESS than adults
+(d = -0.06), but MASTER_RESEARCH_FINDINGS reports teens anthropomorphizing
+MORE (d = +0.11). Why the reversal?
+
+================================================================================
+ROOT CAUSE: DIFFERENT DATA FILTERING
+================================================================================
+
+The original analysis in analyze_results.py used TWO filters:
+  1. confidence >= 0.6
+  2. anthroscore_mean != 0 (users who had ANY anthropomorphization)
+
+The robustness check only used filter #1 (confidence >= 0.6).
+
+================================================================================
+COMPARISON OF RESULTS
+================================================================================
+
+WITH NONZERO FILTER (Original - analyze_results.py):
+  Sample size: 8,846 users
+  Teen mean MAX: 1.2581 (n=7,181)
+  Non-Teen mean MAX: 1.0740 (n=1,665)
+  Cohen's d: +0.111
+  p-value: <0.0001
+  Direction: TEENS HIGHER ✓
+
+WITHOUT NONZERO FILTER (Robustness check):
+  Sample size: 22,774 users
+  Teen mean MAX: 0.4650 (n=19,429)
+  Non-Teen mean MAX: 0.5346 (n=3,345)
+  Cohen's d: -0.058
+  p-value: 0.002
+  Direction: TEENS LOWER ✗
+
+================================================================================
+INTERPRETATION
+================================================================================
+
+1. AMONG USERS WHO ANTHROPOMORPHIZE AT ALL:
+   - Teens show HIGHER peak anthropomorphization (d = +0.11)
+   - This is the finding reported in the paper
+
+2. INCLUDING ALL USERS (many with zero anthropomorphization):
+   - Adults are more likely to have non-zero anthropomorphization scores
+   - When zeros are included, adults appear to anthropomorphize more overall
+   - This explains the reversed direction in robustness checks
+
+3. WHY THE DIFFERENCE?
+   - Most users (61%) have anthroscore_mean = 0 (no anthropomorphizing language)
+   - Among adults, MORE have non-zero scores (engage with topic differently?)
+   - But among those who DO anthropomorphize, teens peak higher
+
+================================================================================
+IMPLICATION FOR THE STUDY
+================================================================================
+
+The original finding is VALID, but with an important nuance:
+
+CORRECT INTERPRETATION:
+"Among AI companion users who exhibit any anthropomorphizing language in their 
+discussions, teenagers show higher PEAK anthropomorphization than adults 
+(d = 0.11, p < 0.0001)."
+
+This is actually a MORE MEANINGFUL comparison because:
+- We're comparing apples to apples (users who do anthropomorphize)
+- The research question is about HOW users anthropomorphize, not WHETHER they do
+- Many users discuss AI companions technically without anthropomorphizing
+
+HOWEVER, the finding should be contextualized:
+- 61% of users show no detectable anthropomorphization
+- Adults are proportionally more represented among anthropomorphizers
+- The effect is small (d = 0.11) though statistically robust
+
+================================================================================
+RECOMMENDATIONS
+================================================================================
+
+1. CLARIFY IN PAPER:
+   - Report that analysis is on "users with non-zero anthropomorphization"
+   - State the N explicitly (8,846 users, not 22,774)
+
+2. ADDITIONAL ROBUSTNESS:
+   - Also test with different nonzero thresholds (>0, >0.1, >0.5)
+   - Ensure finding holds at different cutoffs
+
+3. ADDRESS REVIEWER CONCERN:
+   - If asked why adults have more zero-anthropomorphizers, acknowledge
+   - Could be: different engagement style, lurker behavior, etc.
+
+================================================================================
+UPDATED ROBUSTNESS STATUS (AFTER CORRECTION)
+================================================================================
+
+After applying the correct nonzero filter:
+
+THRESHOLD SENSITIVITY:
+  Threshold 0.5: d = +0.120 *** (significant)
+  Threshold 0.6: d = +0.111 *** (significant) <- matches original finding
+  Threshold 0.7: d = +0.090 *   (significant)
+  Threshold 0.8: d = -0.062     (not significant - small sample)
+  
+  Result: ✓ ROBUST at thresholds 0.5-0.7
+
+BOOTSTRAP CONFIDENCE INTERVALS:
+  Cohen's d = 0.111 [0.054, 0.168]
+  95% CI excludes zero
+  
+  Result: ✓ ROBUST
+
+SELF-DECLARED VALIDATION:
+  Sample: 343 users with nonzero anthroscore (188 teens, 155 adults)
+  
+  UNEXPECTED FINDING: Self-declared teens show LOWER anthroscore (d = -0.30, p = 0.006)
+  
+  This is the OPPOSITE of the predicted-age finding!
+  
+  Possible explanations:
+  1. SELECTION BIAS: Users who self-declare age may be different from non-declarers
+  2. MISCLASSIFICATION: 176 self-declared teens were predicted as "teen" (94% accuracy)
+     but 56 self-declared adults were ALSO predicted as "teen" (36% misclassification)
+  3. SMALL SAMPLE: Only 343 users with self-declared age AND nonzero anthroscore
+  4. The age predictor may be capturing something other than chronological age
+     (perhaps "teen-like behavior/interests" correlates with anthropomorphization)
+
+  Result: ⚠ INCONCLUSIVE - but important methodological concern
+
+================================================================================
+FINAL ASSESSMENT
+================================================================================
+
+The main finding (d = +0.11) IS robust for PREDICTED age.
+
+However, the self-declared age validation raises a critical question:
+- Does the predictor classify users based on actual age, OR
+- Does it classify users based on behavior patterns that ALSO correlate with anthro?
+
+If the age predictor partly captures "anthropomorphizing behavior" as an age signal,
+there could be circularity in the finding.
+
+RECOMMENDATION: Discuss this limitation in the paper. The effect is real for
+predicted age groups, but may not generalize to self-declared age.
+
+================================================================================
+

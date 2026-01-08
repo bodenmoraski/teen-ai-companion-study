@@ -1,0 +1,152 @@
+{
+  "threshold_sensitivity": [
+    {
+      "threshold": 0.5,
+      "n_users": 34285,
+      "pct_of_total": 72.85070757723854,
+      "age_distribution": {
+        "teen": 79.01122940061252,
+        "adult": 14.61863788828934,
+        "young_adult": 6.370132711098147
+      },
+      "n_users_raw": 34285,
+      "n_users_nonzero": 13979,
+      "pct_nonzero": 40.77293276943269,
+      "n_teens": 10489,
+      "n_adults": 3490,
+      "t_statistic": 6.1457926381282055,
+      "p_value": 8.172685788528619e-10,
+      "cohens_d": 0.12010704104778448,
+      "teen_mean": 1.2528607476413784,
+      "adult_mean": 1.0534283423651802,
+      "mann_whitney_u": 19452729.0,
+      "mann_whitney_p": 2.333642225347196e-08,
+      "significant_at_05": true,
+      "significant_at_01": true,
+      "significant_at_001": true
+    },
+    {
+      "threshold": 0.6,
+      "n_users": 22774,
+      "pct_of_total": 48.3914835748587,
+      "age_distribution": {
+        "teen": 85.31219812066392,
+        "adult": 10.977430403091244,
+        "young_adult": 3.7103714762448408
+      },
+      "n_users_raw": 22774,
+      "n_users_nonzero": 8846,
+      "pct_nonzero": 38.84253973829806,
+      "n_teens": 7181,
+      "n_adults": 1665,
+      "t_statistic": 4.0637942537792195,
+      "p_value": 4.869906693340562e-05,
+      "cohens_d": 0.11054965892811183,
+      "teen_mean": 1.2580675233611267,
+      "adult_mean": 1.0739946233270556,
+      "mann_whitney_u": 6336759.5,
+      "mann_whitney_p": 0.00012693569639283934,
+      "significant_at_05": true,
+      "significant_at_01": true,
+      "significant_at_001": true
+    },
+    {
+      "threshold": 0.7,
+      "n_users": 12697,
+      "pct_of_total": 26.979303896986956,
+      "age_distribution": {
+        "teen": 91.21052217059147,
+        "adult": 7.111916200677324,
+        "young_adult": 1.6775616287311963
+      },
+      "n_users_raw": 12697,
+      "n_users_nonzero": 4732,
+      "pct_nonzero": 37.26864613688273,
+      "n_teens": 4151,
+      "n_adults": 581,
+      "t_statistic": 2.0228871148271725,
+      "p_value": 0.043140937552389395,
+      "cohens_d": 0.08962588120874926,
+      "teen_mean": 1.3034306886845846,
+      "adult_mean": 1.1530647805215526,
+      "mann_whitney_u": 1246995.5,
+      "mann_whitney_p": 0.18091515702396188,
+      "significant_at_05": true,
+      "significant_at_01": false,
+      "significant_at_001": false
+    },
+    {
+      "threshold": 0.8,
+      "n_users": 5104,
+      "pct_of_total": 10.845267944413752,
+      "age_distribution": {
+        "teen": 94.57288401253918,
+        "adult": 5.054858934169279,
+        "young_adult": 0.372257053291536
+      },
+      "n_users_raw": 5104,
+      "n_users_nonzero": 1926,
+      "pct_nonzero": 37.73510971786834,
+      "n_teens": 1780,
+      "n_adults": 146,
+      "t_statistic": -0.7152829307973514,
+      "p_value": 0.47452102091521275,
+      "cohens_d": -0.061613257663890086,
+      "teen_mean": 1.4156722627799365,
+      "adult_mean": 1.5197298828479084,
+      "mann_whitney_u": 123869.0,
+      "mann_whitney_p": 0.34600636511577776,
+      "significant_at_05": false,
+      "significant_at_01": false,
+      "significant_at_001": false
+    },
+    {
+      "threshold": 0.9,
+      "n_users": 722,
+      "pct_of_total": 1.5341464451149547,
+      "age_distribution": {
+        "teen": 99.16897506925207,
+        "adult": 0.8310249307479225
+      },
+      "n_users_raw": 722,
+      "n_users_nonzero": 358,
+      "pct_nonzero": 49.584487534626035,
+      "n_teens": 355,
+      "n_adults": 3,
+      "error": "Insufficient data"
+    }
+  ],
+  "self_declared": {
+    "n_users": 459,
+    "n_teens": 188,
+    "n_adults": 155,
+    "t_statistic": -2.7691086290598665,
+    "p_value": 0.005928426792293531,
+    "cohens_d": -0.3013109465463117,
+    "teen_mean": 2.6215149062864236,
+    "adult_mean": 3.02306234723697,
+    "mean_diff": -0.4015474409505466,
+    "cohens_d_ci_lower": -0.5164329760966844,
+    "cohens_d_ci_upper": -0.08484928643484509
+  },
+  "bootstrap": {
+    "threshold": 0.6,
+    "n_bootstrap": 10000,
+    "n_teens": 7181,
+    "n_adults": 1665,
+    "cohens_d": 0.11054965892811183,
+    "cohens_d_ci_lower": 0.053687759651884166,
+    "cohens_d_ci_upper": 0.1677362301300795,
+    "cohens_d_ci_width": 0.11404847047819533,
+    "mean_diff": 0.18407290003407106,
+    "mean_diff_ci_lower": 0.08940688978676552,
+    "mean_diff_ci_upper": 0.2790835734433602,
+    "ci_excludes_zero": true,
+    "high_anthro_rate_teen": 0.42682077705055005,
+    "high_anthro_rate_adult": 0.39039039039039036,
+    "high_anthro_rate_diff": 0.036430386660159686,
+    "high_anthro_rate_diff_ci_lower": 0.010613798591796076,
+    "high_anthro_rate_diff_ci_upper": 0.06370986290565732
+  },
+  "generated": "2026-01-08T00:37:04.768739"
+}

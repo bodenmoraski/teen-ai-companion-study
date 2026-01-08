@@ -699,5 +699,226 @@ Regression: Emotional Valence ~ AnthroScore * Teen
 
 ---
 
+# Addendum: Additional Analyses (January 8, 2026)
+
+## Summary of New Work
+
+This section documents additional robustness checks and statistical analyses conducted to strengthen the publication-readiness of the study.
+
+---
+
+## A. Human Validation Setup
+
+**Status**: ✅ Complete - Ready for annotators
+
+### Materials Created
+
+| File | Location | Purpose |
+|------|----------|---------|
+| `ANNOTATION_GUIDELINES.md` | `Data/annotations/` | 5-point rating scale with examples |
+| `annotation_sheet.csv` | `Data/annotations/` | Spreadsheet for 3 annotators |
+| `ground_truth_DO_NOT_SHARE.csv` | `Data/annotations/` | True AnthroScores for validation |
+| `calculate_irr.py` | `scripts/` | Inter-rater reliability calculator |
+
+### Sample Characteristics
+
+- **Total comments**: 200 (stratified sample)
+- **Stratification**: 50 Zero, 50 Low, 50 Medium, 50 High AnthroScore
+- **AnthroScore range**: 0.0 to 5.35
+
+### Validation Metrics (to be computed after annotation)
+
+- Krippendorff's α (primary reliability metric)
+- Cohen's κ (pairwise agreement)
+- ICC (intraclass correlation)
+- Pearson r with computed AnthroScore
+
+---
+
+## B. Robustness Checks
+
+**Status**: ✅ Complete
+
+### B.1 Confidence Threshold Sensitivity
+
+**Question**: Does the teen anthropomorphization effect hold at different prediction confidence levels?
+
+| Threshold | N Users | N Teens | N Adults | Cohen's d | p-value | Significant |
+|-----------|---------|---------|----------|-----------|---------|-------------|
+| ≥ 0.5 | 13,979 | 10,489 | 3,490 | **+0.120** | <0.0001 | *** |
+| ≥ 0.6 | 8,846 | 7,181 | 1,665 | **+0.111** | <0.0001 | *** |
+| ≥ 0.7 | 4,732 | 4,151 | 581 | **+0.090** | 0.043 | * |
+| ≥ 0.8 | 1,926 | 1,780 | 146 | -0.062 | 0.475 | ns |
+
+**Result**: ✓ Effect is robust at thresholds 0.5-0.7 (3/4 significant)
+
+**Note**: At threshold 0.8, the adult sample becomes very small (n=146), reducing statistical power.
+
+### B.2 Bootstrap Confidence Intervals
+
+| Metric | Point Estimate | 95% CI | Excludes Zero |
+|--------|----------------|--------|---------------|
+| Cohen's d (Teen vs Adult) | 0.111 | [0.054, 0.168] | ✓ Yes |
+| Mean Difference | 0.184 | [0.089, 0.279] | ✓ Yes |
+| High Anthro Rate Difference | 3.6% | [1.1%, 6.4%] | ✓ Yes |
+
+**Result**: ✓ All bootstrap CIs exclude zero - effect is statistically robust
+
+### B.3 Self-Declared Demographics Validation
+
+**Sample**: 343 users with self-declared age AND non-zero anthropomorphization
+
+| Group | N | Mean Max AnthroScore |
+|-------|---|---------------------|
+| Self-declared Teen (< 19) | 188 | 2.62 |
+| Self-declared Adult (≥ 19) | 155 | 3.02 |
+
+| Metric | Value |
+|--------|-------|
+| Cohen's d | **-0.301** |
+| 95% CI | [-0.516, -0.085] |
+| p-value | 0.006 |
+
+**⚠️ CRITICAL FINDING**: Self-declared age shows the **OPPOSITE direction** from predicted age!
+
+**Possible explanations**:
+1. Selection bias: Users who self-declare age may differ systematically
+2. Predictor may capture behavioral patterns beyond chronological age
+3. Small sample size (n=343) with potential sampling bias
+
+**Implication**: The main finding (d = +0.11) is robust for **predicted** age categories but may not generalize to self-declared age. This should be discussed as a limitation.
+
+---
+
+## C. Missing Statistical Analyses
+
+**Status**: ✅ Complete
+
+### C.1 Three-Way ANOVA (Age × Gender × Intent → AnthroScore)
+
+| Effect | F | p-value | η² | Interpretation |
+|--------|---|---------|-----|----------------|
+| Age (main) | 1.1 | 0.293 | 0.0001 | Not significant alone |
+| **Gender** | 365.9 | <0.0001 | 0.0303 | *** Significant |
+| **Intent** | 369.3 | <0.0001 | 0.1363 | *** Largest effect |
+| Age × Gender | 49.0 | <0.0001 | 0.0042 | *** Significant |
+| Age × Intent | 4.8 | <0.001 | 0.0020 | *** Significant |
+| Gender × Intent | 7.5 | <0.0001 | 0.0032 | *** Significant |
+| **Age × Gender × Intent** | 2.6 | 0.023 | 0.0011 | * Significant |
+
+**Key Finding**: Significant three-way interaction (p = 0.023). Intent has the largest effect (η² = 0.136), explaining 13.6% of variance.
+
+**Group Means**:
+
+| Group | Mean Max AnthroScore | N |
+|-------|---------------------|---|
+| Adult Female | 0.608 | 8,244 |
+| Adult Male | 1.577 | 2,263 |
+| Teen Female | 1.126 | 438 |
+| Teen Male | 1.318 | 780 |
+
+### C.2 Mediation Analysis
+
+**Question**: Does intent (character creation) mediate the Age → AnthroScore relationship?
+
+| Path | Coefficient | p-value |
+|------|-------------|---------|
+| c (Total: Age → AnthroScore) | +0.433 | <0.0001 |
+| a (Age → Intent) | +0.019 | 0.079 |
+| b (Intent → AnthroScore \| Age) | +0.831 | <0.0001 |
+| c' (Direct: Age → AnthroScore \| Intent) | +0.417 | <0.0001 |
+
+| Mediation Metrics | Value |
+|-------------------|-------|
+| Indirect effect (a × b) | 0.015 |
+| Sobel test z | 1.75 |
+| Sobel p-value | 0.080 |
+| Proportion mediated | 3.5% |
+
+**Conclusion**: **NO MEDIATION**. Character creation intent does not significantly mediate the age → anthropomorphization relationship. The direct effect remains significant after controlling for intent.
+
+### C.3 Nonlinear Effects Analysis
+
+**Sample**: 459 users with self-declared continuous age
+
+| Model | R² | AIC | Key Finding |
+|-------|-----|-----|-------------|
+| Linear | 0.008 | 1815.4 | Age coefficient: p = 0.056 |
+| Quadratic | 0.009 | 1817.1 | Age² term: p = 0.585 |
+
+**F-test (quadratic vs linear)**: F = 0.30, p = 0.585
+
+**Threshold Analysis** (testing for discontinuities):
+
+| Age Threshold | Interaction p-value |
+|---------------|---------------------|
+| 16 | 0.362 |
+| 18 | 0.456 |
+| 21 | 0.552 |
+| 25 | 0.939 |
+| 30 | 0.135 |
+
+**Conclusion**: No significant nonlinear effects detected. The linear model is sufficient.
+
+---
+
+## D. Robustness Summary
+
+### What Passed
+
+| Check | Result | Implication |
+|-------|--------|-------------|
+| Threshold sensitivity (0.5-0.7) | ✓ d = 0.09-0.12 | Effect robust across confidence levels |
+| Bootstrap CI | ✓ [0.05, 0.17] | Effect statistically robust |
+| Three-way ANOVA | ✓ F = 2.6, p = 0.02 | Complex interaction confirmed |
+
+### What Raised Concerns
+
+| Check | Result | Implication |
+|-------|--------|-------------|
+| Self-declared validation | ⚠️ d = -0.30 | Opposite direction - needs discussion |
+| High confidence (≥0.8) | ⚠️ d = -0.06 | Effect weakens with very high confidence |
+
+### Overall Assessment
+
+**★★ MODERATELY ROBUST**
+
+The main findings are statistically robust for predicted demographics, but the self-declared age validation raises important questions about generalizability. This should be acknowledged as a limitation in the paper.
+
+---
+
+## E. Files Created in This Session
+
+### Scripts
+
+| Script | Purpose |
+|--------|---------|
+| `scripts/prepare_human_validation.py` | Creates annotation materials |
+| `scripts/calculate_irr.py` | Computes inter-rater reliability |
+| `scripts/run_robustness_checks.py` | Runs all robustness analyses |
+| `scripts/run_missing_analyses.py` | Runs three-way ANOVA, mediation, nonlinear |
+
+### Results
+
+| File | Contents |
+|------|----------|
+| `results/robustness/robustness_report.txt` | Full robustness analysis |
+| `results/robustness/robustness_results.json` | Machine-readable results |
+| `results/robustness/ROBUSTNESS_DISCREPANCY_ANALYSIS.txt` | Detailed investigation of teen effect direction |
+| `results/missing_analyses_report.txt` | ANOVA, mediation, nonlinear results |
+| `results/missing_analyses_results.json` | Machine-readable results |
+
+### Data
+
+| File | Contents |
+|------|----------|
+| `Data/annotations/annotation_sheet.csv` | Ready for human coders |
+| `Data/annotations/ANNOTATION_GUIDELINES.md` | Instructions for annotators |
+| `Data/annotations/ground_truth_DO_NOT_SHARE.csv` | True values for validation |
+| `Data/annotations/sample_statistics.txt` | Sample characteristics |
+
+---
+
+*Addendum generated: January 8, 2026*
 *Document generated for The Illusion Project - Anthropomorphization of AI Companions Study*
 

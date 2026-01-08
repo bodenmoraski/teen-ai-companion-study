@@ -1,0 +1,202 @@
+{
+  "anova": {
+    "n_observations": 11725,
+    "groups": {
+      "age": {
+        "Adult": 10507,
+        "Teen": 1218
+      },
+      "gender": {
+        "Female": 8682,
+        "Male": 3043
+      },
+      "intent": {
+        "Other": 5572,
+        "other": 2562,
+        "unknown": 1767,
+        "character_creation": 1654,
+        "community_sharing": 104,
+        "roleplay_fantasy": 66
+      }
+    },
+    "anova_type": "three_way",
+    "r_squared": 0.2078549078812958,
+    "adj_r_squared": 0.20629783266390156,
+    "f_statistic": 133.49060184076276,
+    "f_pvalue": 0.0,
+    "effects": {
+      "C(age_group)": {
+        "F": 1.1048906205856,
+        "p": 0.29321702486592993,
+        "df": 1.0,
+        "sum_sq": 1.8477281024874967,
+        "partial_eta_sq": 9.441810946944993e-05,
+        "significant": false
+      },
+      "C(gender_group)": {
+        "F": 365.89482632602505,
+        "p": 2.452829046899618e-80,
+        "df": 1.0,
+        "sum_sq": 611.8923815273718,
+        "partial_eta_sq": 0.030322202322320902,
+        "significant": true
+      },
+      "C(intent_group)": {
+        "F": 369.2834575509445,
+        "p": 0.0,
+        "df": 5.0,
+        "sum_sq": 3087.7962469216463,
+        "partial_eta_sq": 0.13629293676689708,
+        "significant": true
+      },
+      "C(age_group):C(gender_group)": {
+        "F": 49.00580823624512,
+        "p": 2.6916095372863114e-12,
+        "df": 1.0,
+        "sum_sq": 81.95327879173371,
+        "partial_eta_sq": 0.00417070502228128,
+        "significant": true
+      },
+      "C(age_group):C(intent_group)": {
+        "F": 4.76638233616419,
+        "p": 0.0002360695642861858,
+        "df": 5.0,
+        "sum_sq": 39.85452689001387,
+        "partial_eta_sq": 0.0020326015639574755,
+        "significant": true
+      },
+      "C(gender_group):C(intent_group)": {
+        "F": 7.486564168510081,
+        "p": 5.030495782467592e-07,
+        "df": 5.0,
+        "sum_sq": 62.59956753864177,
+        "partial_eta_sq": 0.0031889112809067124,
+        "significant": true
+      },
+      "C(age_group):C(gender_group):C(intent_group)": {
+        "F": 2.5986997627691335,
+        "p": 0.023491911241835264,
+        "df": 5.0,
+        "sum_sq": 21.729257594073832,
+        "partial_eta_sq": 0.001109228788214829,
+        "significant": true
+      }
+    },
+    "group_means": {
+      "Adult_Female": {
+        "mean": 0.6075131248419581,
+        "std": 1.2917775302631713,
+        "count": 8244
+      },
+      "Adult_Male": {
+        "mean": 1.5773794896795883,
+        "std": 1.6249258229747268,
+        "count": 2263
+      },
+      "Teen_Female": {
+        "mean": 1.1258980199687003,
+        "std": 1.5712527025013205,
+        "count": 438
+      },
+      "Teen_Male": {
+        "mean": 1.3183018450770185,
+        "std": 1.6066693042280769,
+        "count": 780
+      }
+    }
+  },
+  "mediation": {
+    "n_observations": 11725,
+    "target_intent": "character_creation",
+    "path_c": {
+      "coef": 0.4327091337072328,
+      "se": 0.04375609837019438,
+      "p": 5.708218726373762e-23
+    },
+    "path_a": {
+      "coef": 0.018490136296656683,
+      "se": 0.01053572955087836,
+      "p": 0.07928654851554273
+    },
+    "path_b": {
+      "coef": 0.8305597388361549,
+      "se": 0.03758461562070756,
+      "p": 4.714210516992435e-106
+    },
+    "path_c_prime": {
+      "coef": 0.41735197093363635,
+      "se": 0.04287964225441528,
+      "p": 2.6458477615406323e-22
+    },
+    "indirect_effect": {
+      "coef": 0.015357162773596082,
+      "sobel_z": 1.7494850311194332,
+      "sobel_p": 0.08020721404456244
+    },
+    "proportion_mediated": 0.03549072940065694,
+    "mediation_type": "NO MEDIATION"
+  },
+  "nonlinear": {
+    "n_observations": 459,
+    "age_range": [
+      13.0,
+      80.0
+    ],
+    "linear": {
+      "r_squared": 0.008002128007923326,
+      "aic": 1815.359557917233,
+      "bic": 1823.617658337354,
+      "age_coef": 0.012831175999778191,
+      "age_p": 0.05547767027539107
+    },
+    "quadratic": {
+      "r_squared": 0.008650915334508014,
+      "aic": 1817.0592641209057,
+      "bic": 1829.4464147510873,
+      "age_coef": 0.01812404836166573,
+      "age_p": 0.12438432011113061,
+      "age_sq_coef": -0.00021316329846180504,
+      "age_sq_p": 0.5851363395123836
+    },
+    "model_comparison": {
+      "f_statistic": 0.2984287023601118,
+      "p_value": 0.5851363395123765,
+      "aic_improvement": -1.699706203672804,
+      "bic_improvement": -5.828756413733345
+    },
+    "nonlinear_detected": false,
+    "threshold_tests": [
+      {
+        "threshold": 16,
+        "interaction_p": 0.36193004477863944,
+        "r_squared": 0.009899505584293977,
+        "aic": 1818.4807957040885
+      },
+      {
+        "threshold": 18,
+        "interaction_p": 0.4558047614722016,
+        "r_squared": 0.012097465605661606,
+        "aic": 1817.4607122660436
+      },
+      {
+        "threshold": 21,
+        "interaction_p": 0.5515552862794594,
+        "r_squared": 0.009067293896642736,
+        "aic": 1818.8664380921132
+      },
+      {
+        "threshold": 25,
+        "interaction_p": 0.9387809242668652,
+        "r_squared": 0.014088652603136964,
+        "aic": 1816.5346318991856
+      },
+      {
+        "threshold": 30,
+        "interaction_p": 0.13484671681343943,
+        "r_squared": 0.013083272460226558,
+        "aic": 1817.0024572828643
+      }
+    ]
+  },
+  "generated": "2026-01-08T00:23:02.252939"
+}
