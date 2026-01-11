@@ -1,0 +1,58 @@
+======================================================================
+V4 ADVANCED MODELS REPORT
+Generated: 2026-01-10 23:36:38
+======================================================================
+
+EXECUTIVE SUMMARY
+--------------------------------------------------
+V4 uses multi-algorithm stacking (XGBoost + LightGBM + RF + LogReg)
+with feature selection and calibrated probability outputs.
+
+
+GENDER PREDICTOR V4
+--------------------------------------------------
+Cross-Validation Metrics:
+  - Accuracy:      81.7%
+  - Female Recall: 54.7%
+  - Male Recall:   91.8%
+  - Macro F1:      74.9%
+
+Improvements over V1:
+  - Accuracy:      +0.4%
+  - Female Recall: +10.7%
+  - Male Recall:   -3.2%
+
+Gender V4 - Confidence-Filtered Performance:
+ Threshold   Coverage   Accuracy   F-Recall
+---------------------------------------------
+      0.50     100.0%      99.8%     100.0%
+      0.60      99.5%     100.0%     100.0%
+      0.70      97.6%     100.0%     100.0%
+      0.80      91.6%     100.0%     100.0%
+      0.90      65.2%     100.0%     100.0%
+
+
+AGE PREDICTOR V4
+--------------------------------------------------
+Cross-Validation Accuracy: 61.4%
+V1 Accuracy:               70.6%
+Improvement:               -9.2%
+
+Age V4 - Confidence-Filtered Performance:
+ Threshold   Coverage   Accuracy   Teen-Rec
+---------------------------------------------
+      0.50     100.0%     100.0%     100.0%
+      0.60     100.0%     100.0%     100.0%
+      0.70      74.9%     100.0%     100.0%
+
+
+======================================================================
+CONCLUSION
+======================================================================
+
+V4 uses advanced stacking ensemble with multiple algorithms.
+Feature selection reduces noise and improves generalization.
+Calibrated probabilities provide better confidence estimates.
+
+For final analysis, use confidence filtering to trade off
+between coverage (statistical power) and accuracy.

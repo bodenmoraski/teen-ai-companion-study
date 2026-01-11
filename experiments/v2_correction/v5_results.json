@@ -1,0 +1,117 @@
+{
+  "v5": {
+    "gender_metrics": {
+      "accuracy": 0.3408255006129955,
+      "female_recall": 1.0,
+      "female_precision": 0.2919227392449517,
+      "male_recall": 0.09483726150392817,
+      "optimal_threshold": 0.5800000000000001
+    },
+    "gender_confidence": [
+      {
+        "threshold": 0.5,
+        "coverage": 1.0,
+        "n_users": 4894,
+        "accuracy": 0.3408255006129955,
+        "female_recall": 1.0,
+        "majority_recall": 0.09483726150392817,
+        "macro_f1": 0.3125821498615502
+      },
+      {
+        "threshold": 0.6,
+        "coverage": 0.9889660809154066,
+        "n_users": 4840,
+        "accuracy": 0.33925619834710746,
+        "female_recall": 1.0,
+        "majority_recall": 0.08888888888888889,
+        "macro_f1": 0.3086725984350722
+      },
+      {
+        "threshold": 0.7,
+        "coverage": 0.9787494891704127,
+        "n_users": 4790,
+        "accuracy": 0.33820459290187893,
+        "female_recall": 1.0,
+        "majority_recall": 0.0838150289017341,
+        "macro_f1": 0.30546369353916525
+      },
+      {
+        "threshold": 0.8,
+        "coverage": 0.9668982427462198,
+        "n_users": 4732,
+        "accuracy": 0.33770076077768385,
+        "female_recall": 1.0,
+        "majority_recall": 0.078777189888301,
+        "macro_f1": 0.3025723312380843
+      },
+      {
+        "threshold": 0.9,
+        "coverage": 0.9542296689824274,
+        "n_users": 4670,
+        "accuracy": 0.3361884368308351,
+        "female_recall": 1.0,
+        "majority_recall": 0.0718562874251497,
+        "macro_f1": 0.29794188392302917
+      }
+    ],
+    "age_metrics": {
+      "cv_accuracy": 0.5098039215686274,
+      "teen_recall": 0.5984251968503937,
+      "adult_recall": 0.4
+    },
+    "age_confidence": [
+      {
+        "threshold": 0.5,
+        "coverage": 1.0,
+        "n_users": 459,
+        "accuracy": 0.9869281045751634,
+        "teen_recall": 0.9960629921259843,
+        "majority_recall": 0.975609756097561,
+        "macro_f1": 0.9867514624384237
+      },
+      {
+        "threshold": 0.6,
+        "coverage": 0.9389978213507625,
+        "n_users": 431,
+        "accuracy": 1.0,
+        "teen_recall": 1.0,
+        "majority_recall": 1.0,
+        "macro_f1": 1.0
+      },
+      {
+        "threshold": 0.7,
+        "coverage": 0.7603485838779956,
+        "n_users": 349,
+        "accuracy": 1.0,
+        "teen_recall": 1.0,
+        "majority_recall": 1.0,
+        "macro_f1": 1.0
+      },
+      {
+        "threshold": 0.8,
+        "coverage": 0.45098039215686275,
+        "n_users": 207,
+        "accuracy": 1.0,
+        "teen_recall": 1.0,
+        "majority_recall": 1.0,
+        "macro_f1": 1.0
+      },
+      {
+        "threshold": 0.9,
+        "coverage": 0.10893246187363835,
+        "n_users": 50,
+        "accuracy": 1.0,
+        "teen_recall": 1.0,
+        "majority_recall": 1.0,
+        "macro_f1": 1.0
+      }
+    ],
+    "validity": {
+      "cohen_d": 0.25925659894180536,
+      "p_value": 2.6096635638155375e-167,
+      "direction": "teens_higher",
+      "teen_mean": 0.6676197883208382,
+      "adult_mean": 0.35242764426454204
+    }
+  }
+}

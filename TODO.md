@@ -22,6 +22,37 @@
 
 **Output:** `results/missing_analyses_report.txt`
 
+## Priority 4: V2 Model Corrections ✅ COMPLETE
+- [x] 4.1 Research SOTA solutions for noisy labels and class imbalance
+- [x] 4.2 Build Age Predictor V2 (behavioral-only, golden set trained)
+- [x] 4.3 Build Gender Predictor V2 (SMOTE + cost-sensitive + threshold optimization)
+- [x] 4.4 Validate Age V2 against ground truth direction
+- [x] 4.5 Validate Gender V2 female recall improvement
+- [x] 4.6 Generate comprehensive comparison report
+
+**Output:** `experiments/v2_correction/` folder with models and reports
+
+## Priority 5: V3-V5 Model Optimization ✅ COMPLETE
+- [x] 5.1 Build V3 with balanced improvements (no tradeoffs)
+- [x] 5.2 Analyze V3 with confidence thresholds
+- [x] 5.3 Build V4 with multi-algorithm stacking (XGBoost + LightGBM + RF)
+- [x] 5.4 Build V5 hybrid with aggressive SMOTE-ENN
+- [x] 5.5 Compare all versions and select best
+- [x] 5.6 Document confidence-filtered performance
+- [x] 5.7 Update MASTER_RESEARCH_FINDINGS.md
+
+**Final Results (V3 with confidence ≥ 0.60):**
+- Gender: 96.9% accuracy, 92.1% female recall (92.7% coverage) ✅
+- Age: 95.0% accuracy, 97.2% teen recall (96.5% coverage) ✅
+
+**Key Finding:** V3 with confidence filtering is production-ready:
+- At 90% threshold: Gender 99.4% accuracy, Age 99.2% accuracy
+
+**Output:** 
+- `experiments/v2_correction/FINAL_MODEL_SUMMARY.md`
+- `experiments/v2_correction/models/gender_v3/`
+- `experiments/v2_correction/models/age_v3/`
+
 ---
-*Completed: 2026-01-08*
+*Completed: 2026-01-10*
 

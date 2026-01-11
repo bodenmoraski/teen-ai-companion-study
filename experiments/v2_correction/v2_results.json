@@ -1,0 +1,35 @@
+{
+  "age": {
+    "accuracy": 0.5108695652173914,
+    "cohens_d": 0.09134629351818299,
+    "p_value": 4.889886414986624e-08,
+    "ground_truth_valid": false,
+    "cv_results": {
+      "behavioral": 0.5177111716621253,
+      "subreddit": 0.547683923705722,
+      "ensemble": 0.6049046321525886
+    },
+    "n_train": 367,
+    "n_test": 92
+  },
+  "gender": {
+    "female_recall": 0.8872180451127819,
+    "female_precision": 0.3920265780730897,
+    "male_recall": 0.48667601683029454,
+    "overall_accuracy": 0.5955056179775281,
+    "macro_f1": 0.59023802477487,
+    "optimal_threshold": 0.5234183073043823,
+    "v1_female_recall": 0.44,
+    "improvement": 0.4472180451127819,
+    "cv_results": {
+      "text": 0.48026315789473684,
+      "subreddit": 0.48778195488721804,
+      "behavioral": 0.3815789473684211,
+      "linguistic": 0.6776315789473685,
+      "ensemble": 0.7020676691729323
+    },
+    "n_train": 3915,
+    "n_test": 979
+  },
+  "timestamp": "2026-01-10T16:25:56.555114"
+}

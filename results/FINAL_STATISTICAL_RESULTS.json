@@ -1,0 +1,373 @@
+{
+  "rq1": {
+    "age_distribution": {
+      "teen": {
+        "count": 14621,
+        "percentage": 0.5250664368311427,
+        "ci_lower": 0.5192010289004168,
+        "ci_upper": 0.5309318447618687
+      },
+      "adult": {
+        "count": 13225,
+        "percentage": 0.47493356316885726,
+        "ci_lower": 0.4690681552381312,
+        "ci_upper": 0.4807989710995833
+      }
+    },
+    "gender_distribution": {
+      "male": {
+        "count": 21889,
+        "percentage": 0.7860734037204625,
+        "ci_lower": 0.7812568256521863,
+        "ci_upper": 0.7908899817887387
+      },
+      "female": {
+        "count": 5957,
+        "percentage": 0.21392659627953745,
+        "ci_lower": 0.2091100182112613,
+        "ci_upper": 0.2187431743478136
+      }
+    },
+    "age_gender_association": {
+      "chi_square": 24.551759264434942,
+      "p_value": 7.234026488004933e-07,
+      "dof": 1,
+      "cramers_v": 0.029693397978637244,
+      "effect_interpretation": "negligible",
+      "crosstab": {
+        "female": {
+          "adult": 2999,
+          "teen": 2958
+        },
+        "male": {
+          "adult": 10226,
+          "teen": 11663
+        }
+      }
+    }
+  },
+  "rq2": {
+    "age_effect": {
+      "teen_n": 4741,
+      "teen_mean": 1.9372982550296163,
+      "teen_std": 1.2633471978464452,
+      "adult_n": 3935,
+      "adult_mean": 1.9194018581631458,
+      "adult_std": 1.2851629349146352,
+      "t_statistic": 0.6506460724805965,
+      "p_value": 0.5152929306800926,
+      "cohens_d": 0.014055264410542462,
+      "effect_interpretation": "negligible",
+      "bootstrap_mean_diff": 0.01738525102598352,
+      "bootstrap_ci_lower": -0.03739322153663279,
+      "bootstrap_ci_upper": 0.07086692317007068,
+      "bootstrap_significant": "False",
+      "direction": "teens_higher"
+    },
+    "gender_effect": {
+      "male_n": 6645,
+      "male_mean": 1.8964455739558428,
+      "male_std": 1.2497334853450852,
+      "female_n": 2031,
+      "female_mean": 2.0362858198083784,
+      "female_std": 1.3420364997093606,
+      "t_statistic": -4.174248355935342,
+      "p_value": 3.069879724298977e-05,
+      "cohens_d": -0.10994283790657725,
+      "effect_interpretation": "negligible",
+      "bootstrap_mean_diff": -0.13989397305285375,
+      "bootstrap_ci_lower": -0.20570499832781675,
+      "bootstrap_ci_upper": -0.07578908711725718,
+      "bootstrap_significant": "True",
+      "direction": "females_higher"
+    },
+    "two_way_anova": {
+      "age_F": 0.5335410940304408,
+      "age_p": 0.4651416350247316,
+      "gender_F": 18.910956051458346,
+      "gender_p": 1.3852912288397431e-05,
+      "interaction_F": 3.7571638926811226,
+      "interaction_p": 0.05261410584150972,
+      "r_squared": 0.0026559601545221856
+    },
+    "group_means": [
+      {
+        "age_predicted": "adult",
+        "gender_predicted": "female",
+        "mean": 2.0764876887426627,
+        "std": 1.3888127378094892,
+        "count": 954
+      },
+      {
+        "age_predicted": "adult",
+        "gender_predicted": "male",
+        "mean": 1.8691301767230724,
+        "std": 1.2464710558859706,
+        "count": 2981
+      },
+      {
+        "age_predicted": "teen",
+        "gender_predicted": "female",
+        "mean": 2.000675250668817,
+        "std": 1.2994501514894647,
+        "count": 1077
+      },
+      {
+        "age_predicted": "teen",
+        "gender_predicted": "male",
+        "mean": 1.9186691545101244,
+        "std": 1.252282131814864,
+        "count": 3664
+      }
+    ],
+    "ground_truth_validation": {
+      "teen_n": 158,
+      "teen_mean": 2.6543981292329772,
+      "adult_n": 128,
+      "adult_mean": 3.0516699445105626,
+      "t_statistic": -2.486211127751814,
+      "p_value": 0.01351436874450692,
+      "cohens_d": -0.2969844457159944,
+      "direction": "adults_higher",
+      "matches_predicted": "False"
+    }
+  },
+  "rq3": {
+    "correlations": {
+      "emotion_joy": {
+        "r": 0.0044372670871860856,
+        "p_value": 0.6664352401025289,
+        "n": 9439,
+        "interpretation": "negligible",
+        "significant": "False"
+      },
+      "emotion_sadness": {
+        "r": -0.04764291039106805,
+        "p_value": 3.643604293304655e-06,
+        "n": 9439,
+        "interpretation": "negligible",
+        "significant": "True"
+      },
+      "emotion_anger": {
+        "r": 0.0498409409837314,
+        "p_value": 1.2684012278318627e-06,
+        "n": 9439,
+        "interpretation": "negligible",
+        "significant": "True"
+      },
+      "emotion_fear": {
+        "r": 0.045658680535832497,
+        "p_value": 9.093629877269807e-06,
+        "n": 9439,
+        "interpretation": "negligible",
+        "significant": "True"
+      },
+      "emotion_surprise": {
+        "r": 0.012859223377745007,
+        "p_value": 0.2115854188436507,
+        "n": 9439,
+        "interpretation": "negligible",
+        "significant": "False"
+      },
+      "emotion_disgust": {
+        "r": 0.03305136470636528,
+        "p_value": 0.0013202493228113112,
+        "n": 9439,
+        "interpretation": "negligible",
+        "significant": "True"
+      },
+      "emotion_neutral": {
+        "r": -0.04748798613642498,
+        "p_value": 3.918381353302497e-06,
+        "n": 9439,
+        "interpretation": "negligible",
+        "significant": "True"
+      }
+    },
+    "group_comparisons": {
+      "emotion_joy": {
+        "low_mean": 0.07581010052623463,
+        "low_std": 0.1593300421612642,
+        "high_mean": 0.07587069659467914,
+        "high_std": 0.09549801959771333,
+        "t_statistic": 0.015642305143479494,
+        "p_value": 0.9875206083367052,
+        "cohens_d": 0.0004647208051752566,
+        "interpretation": "negligible",
+        "direction": "high_anthro_higher"
+      },
+      "emotion_sadness": {
+        "low_mean": 0.09113172240705902,
+        "low_std": 0.16515292115796204,
+        "high_mean": 0.07944519710916073,
+        "high_std": 0.08655341228091183,
+        "t_statistic": -3.000969940525005,
+        "p_value": 0.002710928882559341,
+        "cohens_d": -0.08942540811962432,
+        "interpretation": "negligible",
+        "direction": "low_anthro_higher"
+      },
+      "emotion_anger": {
+        "low_mean": 0.09862107919093199,
+        "low_std": 0.14923025205331428,
+        "high_mean": 0.11390749226570468,
+        "high_std": 0.10237928102240552,
+        "t_statistic": 4.057254275328615,
+        "p_value": 5.0606021610924736e-05,
+        "cohens_d": 0.12012421423815497,
+        "interpretation": "negligible",
+        "direction": "high_anthro_higher"
+      },
+      "emotion_fear": {
+        "low_mean": 0.039870146247359795,
+        "low_std": 0.10675304003296797,
+        "high_mean": 0.04786136379157424,
+        "high_std": 0.07276286535461207,
+        "t_statistic": 2.9708389700733893,
+        "p_value": 0.0029877180164401738,
+        "cohens_d": 0.087973752808098,
+        "interpretation": "negligible",
+        "direction": "high_anthro_higher"
+      },
+      "emotion_surprise": {
+        "low_mean": 0.14448422084201343,
+        "low_std": 0.1844824748447915,
+        "high_mean": 0.15335244940490558,
+        "high_std": 0.12129581540087697,
+        "t_statistic": 1.92825463456069,
+        "p_value": 0.05389644718584646,
+        "cohens_d": 0.05715452496274794,
+        "interpretation": "negligible",
+        "direction": "high_anthro_higher"
+      },
+      "emotion_disgust": {
+        "low_mean": 0.09548069236920313,
+        "low_std": 0.14958437481631173,
+        "high_mean": 0.10474394116789476,
+        "high_std": 0.0915901973516833,
+        "t_statistic": 2.5331097869537262,
+        "p_value": 0.011346454014793004,
+        "cohens_d": 0.07521784358298902,
+        "interpretation": "negligible",
+        "direction": "high_anthro_higher"
+      },
+      "emotion_neutral": {
+        "low_mean": 0.45460203866669974,
+        "low_std": 0.28904840858018765,
+        "high_mean": 0.42481885981517775,
+        "high_std": 0.17058411196210674,
+        "t_statistic": -4.254354980785354,
+        "p_value": 2.1495507103949283e-05,
+        "cohens_d": -0.12644024024966996,
+        "interpretation": "negligible",
+        "direction": "low_anthro_higher"
+      }
+    },
+    "moderation_effects": {
+      "emotion_joy": {
+        "teen_r": 0.04984570031638866,
+        "teen_p": 0.00033970461412353005,
+        "teen_n": 5163,
+        "adult_r": -0.02942572637282361,
+        "adult_p": 0.05435012621580124,
+        "adult_n": 4276,
+        "z_difference": 3.8349175154002304,
+        "p_difference": 0.00012560643966796903,
+        "significant_moderation": "True"
+      },
+      "emotion_sadness": {
+        "teen_r": -0.07036764111544247,
+        "teen_p": 4.1652096014454984e-07,
+        "teen_n": 5163,
+        "adult_r": -0.024024727303669474,
+        "adult_p": 0.11623573995467498,
+        "adult_n": 4276,
+        "z_difference": -2.2459329788251865,
+        "p_difference": 0.024708301115374365,
+        "significant_moderation": "True"
+      },
+      "emotion_anger": {
+        "teen_r": 0.0327788503875534,
+        "teen_p": 0.018505031518179924,
+        "teen_n": 5163,
+        "adult_r": 0.06638610554366306,
+        "adult_p": 1.3953834119780176e-05,
+        "adult_n": 4276,
+        "z_difference": -1.6289576852154737,
+        "p_difference": 0.103321977059192,
+        "significant_moderation": "False"
+      },
+      "emotion_fear": {
+        "teen_r": 0.05505686869845072,
+        "teen_p": 7.554782758446176e-05,
+        "teen_n": 5163,
+        "adult_r": 0.038649725733226795,
+        "adult_p": 0.011485992906904913,
+        "adult_n": 4276,
+        "z_difference": 0.7949935724522333,
+        "p_difference": 0.4266172410528819,
+        "significant_moderation": "False"
+      },
+      "emotion_surprise": {
+        "teen_r": -0.009057248624272153,
+        "teen_p": 0.5152689109804132,
+        "teen_n": 5163,
+        "adult_r": 0.03514614397217508,
+        "adult_p": 0.021545620513420512,
+        "adult_n": 4276,
+        "z_difference": -2.1377980571089106,
+        "p_difference": 0.03253313677639369,
+        "significant_moderation": "True"
+      }
+    }
+  },
+  "sensitivity": {
+    "age_threshold": [
+      {
+        "threshold": 0.5,
+        "n_total": 14007,
+        "n_teen": 7473,
+        "n_adult": 6534,
+        "cohens_d": 0.01936259983011374,
+        "p_value": 0.253916262496934,
+        "significant": "False"
+      },
+      {
+        "threshold": 0.6,
+        "n_total": 10345,
+        "n_teen": 5654,
+        "n_adult": 4691,
+        "cohens_d": 0.025780200221629235,
+        "p_value": 0.1929636133020434,
+        "significant": "False"
+      },
+      {
+        "threshold": 0.7,
+        "n_total": 6631,
+        "n_teen": 3756,
+        "n_adult": 2875,
+        "cohens_d": 0.02798081657259922,
+        "p_value": 0.26059254327489456,
+        "significant": "False"
+      },
+      {
+        "threshold": 0.8,
+        "n_total": 3540,
+        "n_teen": 2130,
+        "n_adult": 1410,
+        "cohens_d": -0.006845468006714862,
+        "p_value": 0.8432126962598784,
+        "significant": "False"
+      },
+      {
+        "threshold": 0.9,
+        "n_total": 1155,
+        "n_teen": 748,
+        "n_adult": 407,
+        "cohens_d": -0.140396686575281,
+        "p_value": 0.027525873329618367,
+        "significant": "True"
+      }
+    ]
+  }
+}
