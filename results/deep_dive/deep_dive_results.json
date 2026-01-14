@@ -1,0 +1,320 @@
+{
+  "metadata": {
+    "generated": "2026-01-13T23:30:24.325363",
+    "n_comments": 124540
+  },
+  "loneliness": {
+    "prevalence": {
+      "teen_male": {
+        "n": 74667,
+        "has_loneliness_pct": 2.2205258012241016,
+        "mean_loneliness_score": 0.02378560809996384
+      },
+      "teen_female": {
+        "n": 21666,
+        "has_loneliness_pct": 2.0262161912674235,
+        "mean_loneliness_score": 0.02201606203267793
+      },
+      "adult_male": {
+        "n": 20686,
+        "has_loneliness_pct": 3.6594798414386545,
+        "mean_loneliness_score": 0.04046214831286861
+      },
+      "adult_female": {
+        "n": 7521,
+        "has_loneliness_pct": 3.3373221646057702,
+        "mean_loneliness_score": 0.03616540353676373
+      }
+    },
+    "age_effect": {
+      "teen_loneliness_pct": 2.1768241412600045,
+      "adult_loneliness_pct": 3.5735810259864573,
+      "chi2": 174.52222890867196,
+      "p_value": 7.61272945269858e-40,
+      "direction": "adults more lonely"
+    },
+    "anthro_correlation": {
+      "pearson_r": 0.03563529350840287,
+      "p_value": 2.7325762046297936e-36
+    },
+    "by_anthro_level": {
+      "high_anthro_loneliness_pct": 3.9820059980006666,
+      "low_anthro_loneliness_pct": 2.334364114594441,
+      "ratio": 1.7058204301142101
+    }
+  },
+  "relationship_language": {
+    "by_group": {
+      "teen_male": {
+        "n": 5986,
+        "relationship_score_mean": 0.2151666283607483,
+        "sim_romantic": 0.10559059679508209,
+        "sim_friendship": 0.12657059729099274,
+        "sim_dependency": 0.12994322180747986,
+        "sim_tool_usage": 0.1469377875328064
+      },
+      "teen_female": {
+        "n": 1775,
+        "relationship_score_mean": 0.23899655044078827,
+        "sim_romantic": 0.11418361961841583,
+        "sim_friendship": 0.13270030915737152,
+        "sim_dependency": 0.13470621407032013,
+        "sim_tool_usage": 0.1425936222076416
+      },
+      "adult_male": {
+        "n": 1662,
+        "relationship_score_mean": 0.20128928124904633,
+        "sim_romantic": 0.10664042830467224,
+        "sim_friendship": 0.12583401799201965,
+        "sim_dependency": 0.11346209049224854,
+        "sim_tool_usage": 0.1446472555398941
+      },
+      "adult_female": {
+        "n": 577,
+        "relationship_score_mean": 0.2469266653060913,
+        "sim_romantic": 0.1228201761841774,
+        "sim_friendship": 0.1380486935377121,
+        "sim_dependency": 0.12177850306034088,
+        "sim_tool_usage": 0.13572071492671967
+      }
+    },
+    "age_effect": {
+      "teen_mean": 0.22061671316623688,
+      "adult_mean": 0.2130502313375473,
+      "t_statistic": 1.2732196050402023,
+      "p_value": 0.2030232255130155,
+      "direction": "teens use more"
+    },
+    "anthro_correlation": {
+      "pearson_r": 0.23464204245649764,
+      "p_value": 3.8347494984143454e-125
+    }
+  },
+  "linguistic": {
+    "age_comparison": {
+      "word_count": {
+        "teen_mean": 20.2374267499517,
+        "adult_mean": 33.452024155669875,
+        "t_statistic": -20.388156278470305,
+        "p_value": 3.146730176282917e-89,
+        "cohens_d": 0.38069803889370474
+      },
+      "words_per_sentence": {
+        "teen_mean": 10.924063230330628,
+        "adult_mean": 12.29332941546902,
+        "t_statistic": -7.83155725938368,
+        "p_value": 5.568973323218895e-15,
+        "cohens_d": 0.13691316587581956
+      },
+      "first_person_pct": {
+        "teen_mean": 6.191130346657856,
+        "adult_mean": 6.005479992495844,
+        "t_statistic": 1.6991428656062784,
+        "p_value": 0.08933108219106803,
+        "cohens_d": -0.02788945943687393
+      },
+      "third_person_pct": {
+        "teen_mean": 1.8256398450890317,
+        "adult_mean": 1.7432092065756843,
+        "t_statistic": 1.2752034318036782,
+        "p_value": 0.20227242882644234,
+        "cohens_d": -0.020611523559519496
+      },
+      "exclamations": {
+        "teen_mean": 0.14501899671582202,
+        "adult_mean": 0.17199731603668084,
+        "t_statistic": -2.3606959423726854,
+        "p_value": 0.01826054925252555,
+        "cohens_d": 0.03672394204461484
+      },
+      "questions": {
+        "teen_mean": 0.2924206323652521,
+        "adult_mean": 0.2773428763140237,
+        "t_statistic": 1.2684308782896452,
+        "p_value": 0.20468395219976443,
+        "cohens_d": -0.021357024537250253
+      }
+    },
+    "anthro_correlations": {
+      "word_count": {
+        "pearson_r": 0.1545122520854002,
+        "p_value": 4.2730343467241736e-107
+      },
+      "words_per_sentence": {
+        "pearson_r": 0.1065996838344272,
+        "p_value": 1.2394127137961564e-51
+      },
+      "first_person_pct": {
+        "pearson_r": 0.1097082327253294,
+        "p_value": 1.3376737740524235e-54
+      },
+      "third_person_pct": {
+        "pearson_r": 0.12444618907324123,
+        "p_value": 7.534670866855713e-70
+      },
+      "exclamations": {
+        "pearson_r": 0.046016238922427476,
+        "p_value": 7.47909816691997e-11
+      },
+      "questions": {
+        "pearson_r": 0.06633478106738183,
+        "p_value": 5.948271641628085e-21
+      }
+    },
+    "by_anthro_level": {
+      "word_count": {
+        "high_anthro_mean": 38.673298429319374,
+        "low_anthro_mean": 21.556937534549476
+      },
+      "words_per_sentence": {
+        "high_anthro_mean": 13.568025487482169,
+        "low_anthro_mean": 10.983323661651488
+      },
+      "first_person_pct": {
+        "high_anthro_mean": 7.611920298211906,
+        "low_anthro_mean": 5.99523473908867
+      },
+      "third_person_pct": {
+        "high_anthro_mean": 3.3455761229281107,
+        "low_anthro_mean": 1.644787126710601
+      },
+      "exclamations": {
+        "high_anthro_mean": 0.26230366492146595,
+        "low_anthro_mean": 0.13930348258706468
+      },
+      "questions": {
+        "high_anthro_mean": 0.39528795811518325,
+        "low_anthro_mean": 0.2778330569375346
+      }
+    }
+  },
+  "subreddits": {
+    "subreddit_stats": [
+      {
+        "subreddit": "CharacterAI",
+        "n_comments": 118686,
+        "mean_anthro": 1.982373658224222,
+        "high_anthro_pct": 9.008644659016229,
+        "pct_teen": 79.6218593599919,
+        "pct_female": 22.72466845289251
+      },
+      {
+        "subreddit": "replika",
+        "n_comments": 3658,
+        "mean_anthro": 2.2438490978676873,
+        "high_anthro_pct": 24.576271186440678,
+        "pct_teen": 28.321487151448878,
+        "pct_female": 47.9223619464188
+      },
+      {
+        "subreddit": "AICompanions",
+        "n_comments": 2196,
+        "mean_anthro": 2.098360655737705,
+        "high_anthro_pct": 18.806921675774134,
+        "pct_teen": 36.29326047358834,
+        "pct_female": 21.083788706739526
+      }
+    ],
+    "within_subreddit_age_effect": {
+      "CharacterAI": {
+        "n_teen": 94500,
+        "n_adult": 24186,
+        "teen_mean": 1.966910052910053,
+        "adult_mean": 2.042793351525676,
+        "t_statistic": -17.18718532846499,
+        "p_value": 6.081135569991406e-66,
+        "cohens_d": 0.12600982403022412
+      },
+      "replika": {
+        "n_teen": 1036,
+        "n_adult": 2622,
+        "teen_mean": 2.05984555984556,
+        "adult_mean": 2.316552250190694,
+        "t_statistic": -9.702221615701708,
+        "p_value": 8.517186620607564e-22,
+        "cohens_d": 0.34873302772749626
+      },
+      "AICompanions": {
+        "n_teen": 797,
+        "n_adult": 1399,
+        "teen_mean": 1.8042659974905897,
+        "adult_mean": 2.26590421729807,
+        "t_statistic": -14.384216987365102,
+        "p_value": 9.462994761770121e-45,
+        "cohens_d": 0.6135812094950599
+      }
+    }
+  },
+  "content_patterns": {
+    "high_vs_low": {
+      "emotional_support": {
+        "high_anthro_pct": 2.8573808730423194,
+        "low_anthro_pct": 1.0601052107769957,
+        "ratio": 2.69537480241987,
+        "chi2": 286.163787477867,
+        "p_value": 3.407620366329148e-64
+      },
+      "roleplay": {
+        "high_anthro_pct": 23.400533155614795,
+        "low_anthro_pct": 11.185753892087865,
+        "ratio": 2.091994279631607,
+        "chi2": 1492.5803660003253,
+        "p_value": 0.0
+      },
+      "romantic": {
+        "high_anthro_pct": 19.576807730756414,
+        "low_anthro_pct": 2.2810478424681877,
+        "ratio": 8.582374892046763,
+        "chi2": 8551.832707970469,
+        "p_value": 0.0
+      },
+      "friendship": {
+        "high_anthro_pct": 10.421526157947351,
+        "low_anthro_pct": 3.9311864647757164,
+        "ratio": 2.6509874948254137,
+        "chi2": 1049.1176833208358,
+        "p_value": 3.7853375363535146e-230
+      },
+      "technical": {
+        "high_anthro_pct": 18.443852049316895,
+        "low_anthro_pct": 16.991007322101375,
+        "ratio": 1.0855066859588545,
+        "chi2": 16.025482093392604,
+        "p_value": 6.249565972243204e-05
+      },
+      "creative": {
+        "high_anthro_pct": 16.92769076974342,
+        "low_anthro_pct": 8.593694462216535,
+        "ratio": 1.9697803830667415,
+        "chi2": 883.9010291116517,
+        "p_value": 3.101548233479563e-194
+      }
+    },
+    "by_age": {
+      "emotional_support": {
+        "teen_pct": 1.0318374804065067,
+        "adult_pct": 1.921508845322083
+      },
+      "roleplay": {
+        "teen_pct": 10.721144363821328,
+        "adult_pct": 17.970716488814833
+      },
+      "romantic": {
+        "teen_pct": 3.1868622382776413,
+        "adult_pct": 6.548019995036693
+      },
+      "friendship": {
+        "teen_pct": 3.7204280983671225,
+        "adult_pct": 7.413053497358811
+      },
+      "technical": {
+        "teen_pct": 15.68206118360271,
+        "adult_pct": 22.079625624844898
+      },
+      "creative": {
+        "teen_pct": 7.955736871061838,
+        "adult_pct": 14.319140638848513
+      }
+    }
+  }
+}
