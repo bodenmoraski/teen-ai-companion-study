@@ -1,0 +1,19 @@
+{
+  "cohen_kappa": 0.5793650793650793,
+  "cohen_kappa_linear": 0.4401966138722011,
+  "accuracy": 0.64,
+  "accuracy_within_1": 0.96,
+  "mae": 0.41,
+  "pearson_r": 0.590227889237902,
+  "pearson_p": 1.0292099159013726e-10,
+  "spearman_r": 0.4849707493113654,
+  "spearman_p": 3.164461969946467e-07,
+  "expert_mean": 1.5,
+  "llm_mean": 1.51,
+  "expert_std": 0.8660254037844386,
+  "llm_std": 0.714072825417688,
+  "category_accuracy": 0.89,
+  "passes_kappa": false,
+  "passes_within_1": true,
+  "recommendation": "NEEDS REVIEW"
+}

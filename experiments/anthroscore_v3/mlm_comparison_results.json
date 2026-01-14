@@ -1,0 +1,9 @@
+{
+  "llm_expert_r": 0.590227889237902,
+  "mlm_expert_r": 0.10671945566839536,
+  "llm_mlm_r": 0.08242094537601165,
+  "llm_wins": 83,
+  "mlm_wins": 16,
+  "ties": 1,
+  "n_samples": 100
+}
