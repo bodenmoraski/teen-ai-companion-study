@@ -95,8 +95,37 @@ Respond with JSON only:
 - Sensitivity analyses conducted at thresholds 0.50, 0.55, 0.60, 0.65, 0.70
 
 ### Validation
-- Validated against self-declared ages from comment text
-- Accuracy metrics: [Insert if available]
+
+**Ground truth:** Self-declared ages extracted from comment text (e.g., "I'm 17", "as a 25-year-old"). Users with self-declared age form the validation sample.
+
+**Accuracy metrics (V3 model, confidence ≥ 0.60):**
+
+| Metric | Value |
+|--------|-------|
+| **Accuracy** | **95.0%** |
+| Teen recall | 97.2% |
+| Adult recall | 92.3% |
+| Coverage | 96.5% of users |
+
+**Confidence–accuracy tradeoff:**
+
+| Threshold | Coverage | Accuracy | Teen Recall | Adult Recall |
+|-----------|----------|----------|-------------|--------------|
+| ≥ 0.50 | 100.0% | 93.7% | 96.5% | 90.2% |
+| ≥ 0.55 | 98.0% | 94.2% | 96.4% | 91.5% |
+| **≥ 0.60** | **96.5%** | **95.0%** | **97.2%** | **92.3%** |
+| ≥ 0.70 | 90.0% | 97.1% | 98.7% | 95.0% |
+| ≥ 0.80 | 87.4% | 98.0% | 99.1% | 96.6% |
+| ≥ 0.90 | 83.2% | 99.2% | 100.0% | 98.2% |
+
+**Handling contradictions between predictions and self-reported ages:**
+
+1. **Exclusion by confidence:** Users with prediction confidence &lt; 0.60 are excluded from demographic analyses. Only higher-confidence predictions are used.
+2. **No override of predictions:** When LLM predictions contradict self-declared age, we do not replace predictions with self-declarations. Self-declared age is used only for validation.
+3. **Documented discrepancy:** Validation on the self-declared sample showed a *directional* difference: predicted-age analyses (full dataset) can differ from self-declared-age analyses (e.g., adults anthropomorphize more in the verified subsample, d ≈ −0.21). This is reported as a limitation: the model may capture "teen-like" behavioral/linguistic patterns rather than chronological age alone.
+4. **Transparency:** Both predicted-age results and self-declared validation findings are reported. Sensitivity analyses at thresholds 0.50–0.70 confirm robustness of main demographic effects.
+
+*Source: `experiments/v2_correction/FINAL_MODEL_SUMMARY.md`, `V2_FINAL_REPORT.md`.*
 
 ### Implementation
 - **File:** `src/demographics/llm_classifier.py`
@@ -127,6 +156,10 @@ Same architecture as age classification, using **GPT-4o-mini**.
 ### Confidence Threshold
 - **Threshold:** ≥ 0.60
 - Same sensitivity analysis approach as age
+
+### Validation
+
+**Accuracy (V3 model, confidence ≥ 0.60):** 96.9% (female recall 92.1%, male recall 98.5%, coverage 92.7%). Confidence–accuracy table and full metrics in `experiments/v2_correction/FINAL_MODEL_SUMMARY.md`.
 
 ### Known Limitations
 - Binary classification (does not capture non-binary identities)
