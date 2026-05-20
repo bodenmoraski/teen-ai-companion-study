@@ -49,7 +49,8 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 
 PATHS = {
-    "anthroscore_v3": Path("experiments/anthroscore_v3/anthroscore_v3_full.parquet"),
+    "anthroscore_v3": Path("experiments/anthroscore_v3/anthroscore_v3_improved_final.parquet"),
+    "anthroscore_v3_original": Path("experiments/anthroscore_v3/anthroscore_v3_full.parquet"),
     "all_comments": Path("Data/processed/all_comments.parquet"),
     "user_anthroscores_v2": Path("Data/features/user_anthroscores.parquet"),
     "user_emotions": Path("Data/features/user_emotions.parquet"),
@@ -1309,6 +1310,8 @@ AnthroScore V3 uses GPT-4.1-nano to classify anthropomorphization on a 1-5 scale
         if 'correlations' in rq3:
             md += """### Correlations with AnthroScore V3
 
+Emotion columns are per-user class *proportions* (compositionally constrained, approximately summing to 1). **Pearson** and **Spearman** are both reported, but their signs need not match when relationships are non-monotone or entangled with other categories.
+
 | Emotion | Pearson r | 95% CI | Spearman ρ | p-value | Sig. |
 |---------|-----------|--------|------------|---------|------|
 """
@@ -1378,7 +1381,15 @@ AnthroScore V3 uses GPT-4.1-nano to classify anthropomorphization on a 1-5 scale
                     ci = f"[{vals.get('ci_lower', 0):.3f}, {vals.get('ci_upper', 0):.3f}]" if 'ci_lower' in vals else ''
                     sig = '*' if vals.get('p', 1) < 0.05 else ''
                     md += f"| {pred} | {vals['b']:.3f} | {vals['se']:.3f} | {vals['t']:.2f} | {vals['p']:.4f} {sig} | {ci} |\n"
-            
+            if model_name == 'model3' and model.get('vif'):
+                vifs = [v for v in model['vif'].values() if v == v]  # exclude nan
+                max_v = max(vifs) if vifs else 0.0
+                if max_v > 10:
+                    md += (
+                        "\n**Note (Model 3):** All seven emotion proportions enter the model simultaneously; they sum to 1, "
+                        "so the design matrix is rank-deficient and individual emotion **coefficients are not identified** (exploding VIF, unstable signs). "
+                        "The **R² and F** for the block are still a useful read on incremental explained variance; interpret demographics from Models 1–2 and do not use these per-emotion coefficients in the main text.\n"
+                    )
             md += "\n"
 
     md += """---
@@ -1478,7 +1489,8 @@ Using self-declared ages (n = {gt['n_teens'] + gt['n_adults']}):
             
             if p_age < 0.05:
                 if d_age < 0:
-                    md += """1. **Age Effect (Significant):** Adults show significantly higher anthropomorphization than teens. This finding **contradicts** the common assumption that "digital native" teens are more likely to treat AI as human-like. The medium effect size suggests this is a meaningful difference.
+                    size_word = age['effect_sizes']['interpretation']  # Cohen/Hedges bin from interpret_d
+                    md += f"""1. **Age Effect (Significant):** Adults show significantly higher anthropomorphization than teens. This finding **contradicts** the common assumption that "digital native" teens are more likely to treat AI as human-like. By conventional benchmarks, Cohen's d = {d_age:+.3f} is a **{size_word}** effect—statistically very solid at this n, and meaningful in context even if not “large” in absolute terms.
 
 """
                 else:
@@ -1504,7 +1516,7 @@ Using self-declared ages (n = {gt['n_teens'] + gt['n_adults']}):
 
 1. **Measurement Matters:** The shift from MLM-based to LLM-based anthropomorphization measurement resulted in dramatically different findings. This highlights the importance of validated measurement in computational social science.
 
-2. **Demographics Explain Little:** Despite significant effects, demographics explain very little variance in anthropomorphization (R² < 1%). Individual psychological factors likely play a much larger role.
+2. **Demographics Explain Little:** Despite significant effects, demographics alone explain only a few percent of variance in user-level mean AnthroScore (e.g. R² ≈ 4% in the two-predictor model). Individual psychological factors likely play a much larger role.
 
 3. **Age Paradox Resolved:** The discrepancy between predicted age (null effect) and self-declared age (adults higher) in previous analyses is now reconciled with the validated measure showing adults higher.
 
@@ -1517,6 +1529,7 @@ Using self-declared ages (n = {gt['n_teens'] + gt['n_adults']}):
 3. **Cross-sectional:** Cannot establish causality; correlational design only
 4. **Effect sizes:** While statistically significant, many effects are small
 5. **Ground truth:** Self-declared age sample is limited
+6. **Emotion regression:** The seven “emotion” predictors are compositional; the saturated OLS in Model 3 is included for **explained variance** (ΔR²) only—coefficients on individual emotions are not reported as causal or separately interpretable
 
 ---
 

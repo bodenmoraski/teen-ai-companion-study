@@ -40,7 +40,8 @@ logger = logging.getLogger(__name__)
 
 # Paths
 PATHS = {
-    "anthroscore_v3": Path("experiments/anthroscore_v3/anthroscore_v3_full.parquet"),
+    "anthroscore_v3": Path("experiments/anthroscore_v3/anthroscore_v3_improved_final.parquet"),
+    "anthroscore_v3_original": Path("experiments/anthroscore_v3/anthroscore_v3_full.parquet"),
     "all_comments": Path("Data/processed/all_comments.parquet"),
     "user_emotions": Path("Data/features/user_emotions.parquet"),
     "gender_predictions": Path("experiments/v2_correction/gender_predictions_v4.parquet"),

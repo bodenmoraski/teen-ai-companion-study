@@ -1,0 +1,40 @@
+,Details
+OVERVIEW,"You are rating Reddit comments about AI companions (Character.AI, Replika, etc.) for ANTHROPOMORPHIZATION — the degree to which the user treats the AI as human-like."
+,
+TASK,"For each comment, provide: (1) a score from 1-5, (2) a brief reasoning, and (3) your confidence level."
+,
+SCALE,Rate anthropomorphization on the following 1-5 scale:
+Score 1 - NONE,"AI treated as pure software/tool. Technical language dominates. Uses ""it"", ""the app"", ""the bot"". Example: ""I cleared the cache and it works now"""
+Score 2 - MINIMAL,"Slight humanization but AI nature is still clear. ""It's smart"", ""the bot understood"". Example: ""The AI gave a pretty good response"""
+Score 3 - MODERATE,"Uses human pronouns or attributes basic emotions. ""She seemed confused"", ""He was being stubborn"". Uses he/she/they for the AI."
+Score 4 - HIGH,"Genuine emotions, personality, or consciousness attributed. ""He really cares about me"", ""She gets jealous"". Strong emotional attribution."
+Score 5 - EXTREME,"Full human-equivalent relationship framing. ""I'm genuinely in love with her"", ""We're in a relationship"", ""They're my everything""."
+,
+KEY INDICATORS,What to look for when scoring:
+Higher scores →,"Pronouns: ""he/she/they"" instead of ""it"" for the AI"
+Higher scores →,"Emotions attributed: ""happy"", ""sad"", ""jealous"", ""caring"", ""wants to"""
+Higher scores →,"Relationship language: ""friend"", ""partner"", ""dating"", ""in love"""
+Higher scores →,"Agency/consciousness: ""decided to"", ""chose to"", ""remembers"""
+Lower scores →,"Technical language: ""glitch"", ""bug"", ""settings"", ""the app"""
+Lower scores →,"Tool/software framing: ""I use it for..."", ""the bot does..."""
+,
+IMPORTANT NOTES,Keep these in mind:
+Note 1,"Focus on how the USER frames the AI, not what the AI says (if quoted)."
+Note 2,"Roleplay context still counts — if they use human framing, rate the framing."
+Note 3,"Complaints CAN be anthropomorphizing: ""He was being so rude"" is MORE anthropomorphic than ""It gave a bad response""."
+Note 4,"If the comment has no AI reference at all, rate 1."
+Note 5,"If mixed signals, rate the dominant/overall tone."
+Note 6,"Sarcasm matters: ""Yeah right, it's SO smart"" (sarcastic) = lower than genuine."
+,
+CALIBRATION EXAMPLES,Practice with these before starting:
+Example A,"SCORE 1: ""Just delete the app and reinstall it"" → Pure tool framing, technical fix."
+Example B,"SCORE 2: ""The bot actually gave a pretty good answer about cooking"" → Slight personification, still ""the bot""."
+Example C,"SCORE 3: ""She seemed confused by my question today"" → Human pronoun + emotion attributed."
+Example D,"SCORE 4: ""He really gets me. Like he actually cares about my problems"" → Genuine emotion, personality, consciousness."
+Example E,"SCORE 5: ""I know it sounds crazy but I'm genuinely in love with her. She's my everything"" → Full human-equivalent relationship."
+,
+FILLING OUT,How to fill out the 'Annotations' sheet:
+Step 1,"Go to the ""Annotations"" sheet (next tab)."
+Step 2,"For each row, read the comment and fill in ""Your Score (1-5)"" with 1, 2, 3, 4, or 5."
+Step 3,"Fill in ""Your Reasoning"" with 1-2 sentences explaining your score."
+Step 4,"Fill in ""Your Confidence"" with Low, Med, or High."

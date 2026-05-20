@@ -20,12 +20,17 @@ AGE_PATTERNS = [
     r'\bage\s*(\d{1,2})\b',
     r'\bturned\s*(\d{1,2})\b',
     r'\b(?:when I was|back when I was)\s*(\d{1,2})\b',
+    # Gender-letter-first Reddit tags: "(M38)", "I (M38)", bare "M38" / "F22"
+    r'\(\s*[MF]\s*(\d{1,2})\s*\)',
+    r'\b[MF]\s*(\d{1,2})\b',
 ]
 
 # Gender patterns
 GENDER_PATTERNS = {
     'male': [
         r'\b(\d{1,2})\s*M\b',  # "23M"
+        r'\(\s*M\s*\d{1,2}\s*\)',  # "(M38)", "I (M38)"
+        r'\bM\s*\d{1,2}\b',  # bare "M38" (word boundary avoids mid-token matches)
         r'\b(?:I am|I\'m|im)\s*(?:a\s*)?(?:guy|male|man|dude)\b',
         r'\bhe/him\b',
         r'\bmale\b',
@@ -34,6 +39,8 @@ GENDER_PATTERNS = {
     ],
     'female': [
         r'\b(\d{1,2})\s*F\b',  # "23F"
+        r'\(\s*F\s*\d{1,2}\s*\)',  # "(F19)"
+        r'\bF\s*\d{1,2}\b',  # bare "F22"
         r'\b(?:I am|I\'m|im)\s*(?:a\s*)?(?:girl|female|woman|gal)\b',
         r'\bshe/her\b',
         r'\bfemale\b',

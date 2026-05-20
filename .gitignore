@@ -1,3 +1,7 @@
+# =============================================================================
+# The Illusion Project - .gitignore
+# =============================================================================
+
 # Python
 __pycache__/
 *.py[cod]
@@ -36,10 +40,13 @@ env/
 # Jupyter Notebook
 .ipynb_checkpoints/
 
-# Logs
+# Logs and execution artifacts
 *.log
+*.tmp
+*.temp
+.cache/
 
-# Models (too large)
+# Models (too large for git)
 results/models/
 *.pkl
 *.joblib
@@ -49,44 +56,30 @@ results/models/
 Thumbs.db
 desktop.ini
 
-# Temporary files
-*.tmp
-*.temp
-.cache/
-
-# API keys
+# API keys and secrets
 .env
-*.env
+*.env.local
 
-# Large external dependencies (clone separately if needed)
+# Archive folder (development artifacts)
+.archive/
+
+# External dependencies
 Anthroscore-V2-main/
 Chew-V2-main/
 
-# Archive folders
-archive/
-scripts/archive/
-results/archive/
-experiments/*/archive/
+# =============================================================================
+# DATA FILES
+# =============================================================================
 
-# PDF copies (keep markdown versions)
-*.pdf
-
-# ============================================================================
-# DATA FILES - Managed via Git LFS
-# ============================================================================
-# Strategy: Track essential analysis data via LFS, exclude raw/intermediate files
-# that are too large (>100MB) or can be regenerated.
-
-# --- RAW DATA (exclude - 1.4GB, re-downloadable from Arctic Shift) ---
+# Raw data (re-downloadable from Arctic Shift)
 Data/raw/
 Data/r_characterAI_comments.jsonl
 *.jsonl
 
-# --- LARGE INTERMEDIATE FILES (exclude - regenerable) ---
+# Large intermediate files (can be regenerated)
 Data/features/ultimate_predictor/
-Data/features/*.backup
+Data/features/*.backup*
 Data/features/user_subreddit_interactions.parquet
-Data/features/user_subreddit_interactions.parquet.backup
 Data/features/comments_with_anthroscores.parquet
 Data/features/community_embeddings*.parquet
 Data/features/demographics.parquet
@@ -95,37 +88,45 @@ Data/features/demographics_original_backup.parquet
 Data/features/demographics_v2.parquet
 Data/features/intent_topics.parquet
 Data/features/full_analysis_data.parquet
-experiments/v2_correction/all_features_v4.parquet
-experiments/v2_correction/age_predictions_v2.parquet
-experiments/v2_correction/age_predictions_v3.parquet
-experiments/v2_correction/age_predictions_v5.parquet
-experiments/v2_correction/gender_predictions_v2.parquet
-experiments/v2_correction/gender_predictions_v3.parquet
-experiments/v2_correction/gender_predictions_v5.parquet
 
-# --- SUBREDDIT-SPECIFIC SUBSETS (exclude - derivable from all_comments) ---
+# Old/superseded prediction files
+experiments/v2_correction/age_predictions_v2.parquet
+experiments/v2_correction/gender_predictions_v2.parquet
+experiments/v2_correction/age_predictions_v5.parquet
+experiments/v2_correction/gender_predictions_v5.parquet
+experiments/v2_correction/all_features_v4.parquet
+
+# Checkpoint files
+*_checkpoint.parquet
+
+# Subreddit-specific subsets (derivable from all_comments)
 Data/processed/characterai_comments.parquet
 Data/processed/replika_comments.parquet
 Data/processed/aicompanions_comments.parquet
 Data/processed/*.jsonl
 
-# ============================================================================
-# ESSENTIAL DATA FILES - TRACKED VIA GIT LFS (do NOT ignore these)
-# ============================================================================
-# These files are required to run all analysis scripts on another machine.
+# =============================================================================
+# ESSENTIAL FILES - DO NOT IGNORE (tracked via Git LFS)
+# =============================================================================
+# These files are required for reproducibility:
 #
-# Core data (~31 MB):
-#   Data/processed/all_comments.parquet
+# Core data:
+#   Data/processed/all_comments.parquet (~31 MB)
 #
-# AnthroScore V3 (~23 MB):
-#   experiments/anthroscore_v3/anthroscore_v3_full.parquet
+# AnthroScore V3:
+#   experiments/anthroscore_v3/anthroscore_v3_improved_final.parquet (~14 MB)
+#   experiments/anthroscore_v3/anthroscore_v3_full.parquet (~23 MB)
 #   experiments/anthroscore_v3/test_set_expert_labeled.parquet
 #
-# Demographics (~4 MB):
+# Demographics V4 (produces paper statistics):
 #   experiments/v2_correction/age_predictions_v4.parquet
 #   experiments/v2_correction/gender_predictions_v4.parquet
 #
-# Features (~52 MB):
+# Demographics V3 (reference):
+#   experiments/v2_correction/age_predictions_v3.parquet
+#   experiments/v2_correction/gender_predictions_v3.parquet
+#
+# Features:
 #   Data/features/user_emotions.parquet
 #   Data/features/user_anthroscores.parquet
 #   Data/features/self_declarations.parquet
@@ -136,6 +137,8 @@ Data/processed/*.jsonl
 # Human validation:
 #   experiments/anthroscore_v3/HUMAN_VALIDATION_BLIND.xlsx
 #   experiments/anthroscore_v3/HUMAN_VALIDATION_ANSWER_KEY.xlsx
+#   Validations/*.csv
 #
-# Annotations:
-#   Data/annotations/
+# Publication figures:
+#   results/paper_figures/*.pdf
+#   results/paper_figures/*.png

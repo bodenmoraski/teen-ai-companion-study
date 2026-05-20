@@ -1,0 +1,243 @@
+{
+  "metadata": {
+    "generated": "2026-05-20T11:08:06.792280",
+    "confidence_threshold": 0.6,
+    "inclusive_n": 16347,
+    "conditional_n": 5160
+  },
+  "inclusive": {
+    "age_effect": {
+      "sample": "inclusive",
+      "teen_n": 13302,
+      "adult_n": 3045,
+      "teen_mean": 1.1078028868517324,
+      "teen_sd": 0.2898601160232763,
+      "adult_mean": 1.2787617262700335,
+      "adult_sd": 0.4929982236654114,
+      "welch_t": -18.42054210709698,
+      "welch_p": 1.9701840160650565e-72,
+      "mann_whitney_u": 15791291.5,
+      "mann_whitney_p": 1.835295115830772e-117,
+      "cohens_d": -0.507124695555501,
+      "d_interpretation": "medium",
+      "direction": "adults higher"
+    },
+    "gender_effect": {
+      "sample": "inclusive",
+      "male_n": 13399,
+      "female_n": 2948,
+      "male_mean": 1.1207730060671026,
+      "male_sd": 0.31768621189393115,
+      "female_mean": 1.2254362106855123,
+      "female_sd": 0.43245219270262203,
+      "welch_t": -12.42385053623503,
+      "welch_p": 9.574068420123845e-35,
+      "cohens_d": -0.3066978169999327,
+      "d_interpretation": "small",
+      "direction": "females higher"
+    },
+    "anova": {
+      "sample": "inclusive",
+      "n": 16347,
+      "r_squared": 0.051541837074962044,
+      "age_effect": {
+        "ss": 72.41846240793065,
+        "df": 1,
+        "f": 646.6257011866334,
+        "p": 0.0,
+        "eta_squared": 0.03752661228951776
+      },
+      "gender_effect": {
+        "ss": 26.469751229258055,
+        "df": 1,
+        "f": 236.34886574145682,
+        "p": 0.0,
+        "eta_squared": 0.013716393012944904
+      },
+      "interaction": {
+        "ss": 0.5766824171625728,
+        "df": 1,
+        "f": 5.149207259596756,
+        "p": 0.02326996424881267,
+        "eta_squared": 0.0002988317724993825
+      }
+    },
+    "subgroups": {
+      "sample": "inclusive",
+      "subgroups": {
+        "teen_male": {
+          "n": 11088,
+          "mean": 1.0920678309733531,
+          "sd": 0.26210023495454576
+        },
+        "teen_female": {
+          "n": 2214,
+          "mean": 1.1866060935271934,
+          "sd": 0.3916218331189837
+        },
+        "adult_male": {
+          "n": 2311,
+          "mean": 1.2584982252101113,
+          "sd": 0.4824075701925703
+        },
+        "adult_female": {
+          "n": 734,
+          "mean": 1.342561386964148,
+          "sd": 0.5201568888355202
+        }
+      }
+    },
+    "binary_threshold": {
+      "sample": "inclusive",
+      "threshold": 3,
+      "overall_rate": 0.07249036520462471,
+      "overall_n": 1185,
+      "teen_rate": 0.06232145542023756,
+      "adult_rate": 0.11691297208538588,
+      "age_chi2": 109.01874593402168,
+      "age_p": 1.6075829090081115e-25,
+      "age_odds_ratio": 1.9919369490409258,
+      "male_rate": 0.061273229345473544,
+      "female_rate": 0.12347354138398914,
+      "gender_chi2": 138.1191343727754,
+      "gender_p": 6.863329013223484e-32,
+      "gender_odds_ratio": 2.1581285376513577
+    }
+  },
+  "conditional": {
+    "age_effect": {
+      "sample": "conditional",
+      "teen_n": 3749,
+      "adult_n": 1411,
+      "teen_mean": 1.382500400347225,
+      "teen_sd": 0.4393955741438505,
+      "adult_mean": 1.6015800542113765,
+      "adult_sd": 0.5747760086046745,
+      "welch_t": -12.962708411389654,
+      "welch_p": 5.336382810695081e-37,
+      "mann_whitney_u": 1860624.5,
+      "mann_whitney_p": 5.001591641403499e-61,
+      "cohens_d": -0.45615088081883975,
+      "d_interpretation": "small",
+      "direction": "adults higher"
+    },
+    "gender_effect": {
+      "sample": "conditional",
+      "male_n": 3734,
+      "female_n": 1426,
+      "male_mean": 1.4333790863130977,
+      "male_sd": 0.4761428532136213,
+      "female_mean": 1.4660490526654215,
+      "female_sd": 0.5239693263563067,
+      "welch_t": -2.0529581715890752,
+      "welch_p": 0.04018594849294389,
+      "cohens_d": -0.06668780302902338,
+      "d_interpretation": "negligible",
+      "direction": "females higher"
+    },
+    "anova": {
+      "sample": "conditional",
+      "n": 5160,
+      "r_squared": 0.04118540089299382,
+      "age_effect": {
+        "ss": 49.20359608932715,
+        "df": 1,
+        "f": 213.61374462991824,
+        "p": 0.0,
+        "eta_squared": 0.039723812436206644
+      },
+      "gender_effect": {
+        "ss": 1.1013909709394023,
+        "df": 1,
+        "f": 4.7816067991619935,
+        "p": 0.02881005772788492,
+        "eta_squared": 0.000889192088096556
+      },
+      "interaction": {
+        "ss": 0.7089943789579531,
+        "df": 1,
+        "f": 3.0780462455593405,
+        "p": 0.07941519734278979,
+        "eta_squared": 0.0005723963686906138
+      }
+    },
+    "subgroups": {
+      "sample": "conditional",
+      "subgroups": {
+        "teen_male": {
+          "n": 2748,
+          "mean": 1.3714876673335297,
+          "sd": 0.416440990331596
+        },
+        "teen_female": {
+          "n": 1001,
+          "mean": 1.412733157911295,
+          "sd": 0.49596286600761613
+        },
+        "adult_male": {
+          "n": 986,
+          "mean": 1.6058716008727865,
+          "sd": 0.5788657256447924
+        },
+        "adult_female": {
+          "n": 425,
+          "mean": 1.591623665956905,
+          "sd": 0.5657241636848005
+        }
+      }
+    },
+    "emotions": {
+      "sample": "conditional",
+      "correlations": {
+        "emotion_joy": {
+          "pearson_r": 0.15906020123738226,
+          "pearson_p": 1.3886585367397238e-29,
+          "spearman_rho": -0.15616309880669582,
+          "spearman_p": 1.4553786774360867e-28
+        },
+        "emotion_sadness": {
+          "pearson_r": 0.06693908309727034,
+          "pearson_p": 2.262690096060633e-06,
+          "spearman_rho": -0.23681048915047592,
+          "spearman_p": 1.903483530370203e-64
+        },
+        "emotion_anger": {
+          "pearson_r": 0.06537508018606217,
+          "pearson_p": 3.880038111367146e-06,
+          "spearman_rho": -0.1640488961430452,
+          "spearman_p": 2.187392737071192e-31
+        },
+        "emotion_fear": {
+          "pearson_r": 0.07286240561576354,
+          "pearson_p": 2.634128730351548e-07,
+          "spearman_rho": -0.17811715599333308,
+          "spearman_p": 8.770518883518247e-37
+        },
+        "emotion_surprise": {
+          "pearson_r": -0.021742955048507612,
+          "pearson_p": 0.12494815188414767,
+          "spearman_rho": -0.2007288938958091,
+          "spearman_p": 1.9227002859804943e-46
+        },
+        "emotion_disgust": {
+          "pearson_r": 0.013620811486244954,
+          "pearson_p": 0.3364976539557382,
+          "spearman_rho": -0.18727727880596218,
+          "spearman_p": 1.505559851951255e-40
+        },
+        "emotion_neutral": {
+          "pearson_r": -0.2262377077263695,
+          "pearson_p": 7.804374079732775e-59,
+          "spearman_rho": -0.26029502697209345,
+          "spearman_p": 6.074624095898135e-78
+        },
+        "dominant_emotion_score": {
+          "pearson_r": 0.35469340098813473,
+          "pearson_p": 1.3608788196496068e-147,
+          "spearman_rho": 0.19524644089958695,
+          "spearman_p": 5.479494605000341e-44
+        }
+      }
+    }
+  }
+}

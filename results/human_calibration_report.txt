@@ -1,0 +1,48 @@
+======================================================================
+ANTHROSCORE HUMAN CALIBRATION REPORT
+======================================================================
+Total validation items: 151
+Number of human annotators: 3
+
+--- Pairwise Inter-Rater Reliability ---
+Pair                          N   Exact      ±1   Kappa     MAD
+-----------------------------------------------------------------
+Stephanie vs Boden          101  50.5%  85.1%   0.282   0.72
+Stephanie vs Afia           100  40.0%  68.0%   0.210   1.20
+Boden vs Afia           100  41.0%  74.0%   0.243   0.97
+
+Overall mean exact agreement: 43.8%
+Overall mean Cohen's kappa:  0.245
+
+--- Algorithm vs Human Consensus ---
+Exact agreement:  37.6%
+Within ±1:        73.3%
+Mean bias (algo - human): +0.81
+Bias direction: algorithm_overscores
+
+--- Confusion Matrix (Human Consensus → Algo) ---
+Human\Algo    1    2    3    4    5
+       1      14   12    3    1    6
+       2       3    8    5    3    7
+       3       0    0    9    7    5
+       4       0    2    5    5    2
+       5       0    0    0    2    2
+
+--- High-Disagreement Cases (27) ---
+  Item 26: Consensus=1, Algo=5 (diff=+4)
+    Annotators: Stephanie=1, Boden=1, Afia=1
+    Text: I just tried it, love the playlist...
+  Item 53: Consensus=1, Algo=5 (diff=+4)
+    Annotators: Stephanie=1, Boden=1, Afia=2
+    Text: I wasn’t talking about the first three though, I was talking about the last one....
+  Item 62: Consensus=1, Algo=5 (diff=+4)
+    Annotators: Stephanie=1, Boden=2, Afia=1
+    Text: Possessive possessive possessive possessive possessive possessive possessive possessive possessive p...
+  Item 83: Consensus=1, Algo=5 (diff=+4)
+    Annotators: Stephanie=1, Boden=1, Afia=2
+    Text: While I do agree with you, I think it'll happen a lot sooner than a hundred years from now. Give it ...
+  Item 92: Consensus=1, Algo=5 (diff=+4)
+    Annotators: Stephanie=1, Boden=1, Afia=1
+    Text: Uhhh i think 5. The answer is 5 right?...
+
+======================================================================
